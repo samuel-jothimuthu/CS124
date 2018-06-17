@@ -1,0 +1,38 @@
+\hypertarget{pop_8cpp}{\subsection{pop.\+cpp File Reference}
+\label{pop_8cpp}\index{pop.\+cpp@{pop.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for pop.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{pop_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{pop_8cpp_a9ab82590ff3d7086853fd9b2106d255c}{Pop} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int \&item)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{pop_8cpp_a9ab82590ff3d7086853fd9b2106d255c}{\index{pop.\+cpp@{pop.\+cpp}!Pop@{Pop}}
+\index{Pop@{Pop}!pop.\+cpp@{pop.\+cpp}}
+\paragraph[{Pop}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Pop (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int \&}]{item}
+\end{DoxyParamCaption}
+)}}\label{pop_8cpp_a9ab82590ff3d7086853fd9b2106d255c}
+This is a pop function it pos the elements off the top of the stack See inline comments for more clarification 
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keywordflow}{if} (stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} == 0) \textcolor{comment}{//Check if stack is empty}
+9         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+10     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}--; \textcolor{comment}{//decrement stack to the bottom element with stuff in it}
+11     item = stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf}[stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp}]; \textcolor{comment}{// set a variable to equal what is in the element to use later}
+12     
+13     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+14 \}
+\end{DoxyCode}

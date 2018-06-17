@@ -1,0 +1,77 @@
+\hypertarget{classMERGESORT}{\subsection{M\+E\+R\+G\+E\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$ Class Template Reference}
+\label{classMERGESORT}\index{M\+E\+R\+G\+E\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$@{M\+E\+R\+G\+E\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$}}
+}
+
+
+{\ttfamily \#include $<$lab.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classMERGESORT_a8965b6cdd1fedab95df230f65e094721}{M\+E\+R\+G\+E\+S\+O\+R\+T} (int n)
+\item 
+\hyperlink{classMERGESORT_a42c9dce7fc0c35538d0e948ba1c3be39}{$\sim$\+M\+E\+R\+G\+E\+S\+O\+R\+T} ()
+\item 
+void \hyperlink{classMERGESORT_ab3dba99ab686ac3a686c82fc41a91d61}{Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\hypertarget{classMERGESORT_a8965b6cdd1fedab95df230f65e094721}{\index{M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}!M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}}
+\index{M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}!M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}}
+\paragraph[{M\+E\+R\+G\+E\+S\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data$>$ {\bf M\+E\+R\+G\+E\+S\+O\+R\+T}$<$ {\bf A\+Q\+I\+Data} $>$\+::{\bf M\+E\+R\+G\+E\+S\+O\+R\+T} (
+\begin{DoxyParamCaption}
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMERGESORT_a8965b6cdd1fedab95df230f65e094721}
+
+\begin{DoxyCode}
+51 \{work = \textcolor{keyword}{new} \hyperlink{structAQIData}{AQIData}[n]; \}
+\end{DoxyCode}
+\hypertarget{classMERGESORT_a42c9dce7fc0c35538d0e948ba1c3be39}{\index{M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}!````~M\+E\+R\+G\+E\+S\+O\+R\+T@{$\sim$\+M\+E\+R\+G\+E\+S\+O\+R\+T}}
+\index{````~M\+E\+R\+G\+E\+S\+O\+R\+T@{$\sim$\+M\+E\+R\+G\+E\+S\+O\+R\+T}!M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}}
+\paragraph[{$\sim$\+M\+E\+R\+G\+E\+S\+O\+R\+T}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data$>$ {\bf M\+E\+R\+G\+E\+S\+O\+R\+T}$<$ {\bf A\+Q\+I\+Data} $>$\+::$\sim${\bf M\+E\+R\+G\+E\+S\+O\+R\+T} (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classMERGESORT_a42c9dce7fc0c35538d0e948ba1c3be39}
+
+\begin{DoxyCode}
+53 \{\textcolor{keyword}{delete} [] work;\}
+\end{DoxyCode}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classMERGESORT_ab3dba99ab686ac3a686c82fc41a91d61}{\index{M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}!Sort@{Sort}}
+\index{Sort@{Sort}!M\+E\+R\+G\+E\+S\+O\+R\+T@{M\+E\+R\+G\+E\+S\+O\+R\+T}}
+\paragraph[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data $>$ void {\bf M\+E\+R\+G\+E\+S\+O\+R\+T}$<$ {\bf A\+Q\+I\+Data} $>$\+::Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{classMERGESORT_ab3dba99ab686ac3a686c82fc41a91d61}
+
+\begin{DoxyCode}
+78 \{
+79     \textcolor{keywordtype}{int} n1, n2;
+80     \hyperlink{structAQIData}{AQIData} *a2;
+81     \textcolor{keywordflow}{if} (n <= 2) \{ \textcolor{comment}{//Base Case }
+82         \textcolor{keywordflow}{if} ( n== 2 && a[1] < a[0])
+83             Swap(a[0], a[1]);
+84         \}
+85         \textcolor{keywordflow}{else} \{ \textcolor{comment}{// Recursive case:}
+86             n1 = n/2; n2 = n - n1;
+87             a2 = &a[n1];
+88             
+89             \hyperlink{classMERGESORT_ab3dba99ab686ac3a686c82fc41a91d61}{Sort}(a, n1);
+90             \hyperlink{classMERGESORT_ab3dba99ab686ac3a686c82fc41a91d61}{Sort}(a2, n2);
+91             Merge(a, n1, a2, n2);
+92         \}
+93 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h}{lab.\+h}\item 
+\hyperlink{SOMETYPE_8hpp}{S\+O\+M\+E\+T\+Y\+P\+E.\+hpp}\end{DoxyCompactItemize}

@@ -1,0 +1,273 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+{\ttfamily \#include \char`\"{}config.\+h\char`\"{}}\\*
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Cairo\+\_\+\+Window.\+H$>$}\\*
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Input.\+H$>$}\\*
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Button.\+H$>$}\\*
+{\ttfamily \#include $<$F\+L/fl\+\_\+ask.\+H$>$}\\*
+{\ttfamily \#include $<$F\+L/\+Fl\+\_\+\+Output.\+H$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$Fl/\+Fl\+\_\+\+Text\+\_\+\+Display.\+H$>$}\\*
+{\ttfamily \#include $<$Fl/\+Fl\+\_\+\+Text\+\_\+\+Buffer.\+H$>$}\\*
+Include dependency graph for lab.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structORDER}{O\+R\+D\+E\+R}
+\item 
+struct \hyperlink{structNODE}{N\+O\+D\+E}
+\item 
+class \hyperlink{classLLQUEUE}{L\+L\+Q\+U\+E\+U\+E}
+\item 
+class \hyperlink{classRBQUEUE}{R\+B\+Q\+U\+E\+U\+E}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lab_8h_a14029123842f0c00bf955eaeea529b17}{order\+Cb} (Fl\+\_\+\+Callback, void $\ast$)
+\item 
+void \hyperlink{lab_8h_aa05ac27c7de405a78817cddb14e9f303}{driver\+Cb} (Fl\+\_\+\+Callback, void $\ast$)
+\item 
+void \hyperlink{lab_8h_a56ac87e7157d59fc25975adae5b10cb6}{show\+Q} (Fl\+\_\+\+Callback $\ast$, void $\ast$)
+\item 
+void \hyperlink{lab_8h_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver} (void $\ast$)
+\item 
+Fl\+\_\+\+Cairo\+\_\+\+Window $\ast$ \hyperlink{lab_8h_af7bd238954bf4d2d0f780d4d80eaf2b2}{window} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+const int \hyperlink{lab_8h_a66326676d44c838441a4dc39c85f599b}{w} = 300
+\item 
+const int \hyperlink{lab_8h_a3f40fea9b1040e381f08ddd4b026765d}{h} = 300
+\item 
+const int \hyperlink{lab_8h_ad69f678058ac1e2c6d82212fd735b7a4}{B\+U\+F\+S\+I\+Z\+E} = 10
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{lab_8h_abf805c82a90897837d1c26ef915f1cd6}{pizza}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{lab_8h_a0ce7586472726848924b4964b80e69ba}{address}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{lab_8h_ac3a31ef741b6d40c85fd634017661a38}{Driver}
+\item 
+Fl\+\_\+\+Output $\ast$ \hyperlink{lab_8h_a05c7f6e86cca5f4d0ebf44d1f5042c37}{watch}
+\item 
+Fl\+\_\+\+Text\+\_\+\+Buffer $\ast$ \hyperlink{lab_8h_aea2b8efadc87a819fe57c311d668e504}{buff}
+\item 
+Fl\+\_\+\+Text\+\_\+\+Display $\ast$ \hyperlink{lab_8h_a23f917547a833922fd6bc8797cc04ee1}{order\+Q}
+\item 
+\hyperlink{structORDER}{O\+R\+D\+E\+R} \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}
+\item 
+\hyperlink{classLLQUEUE}{L\+L\+Q\+U\+E\+U\+E} \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pending\+Order}
+\item 
+\hyperlink{classRBQUEUE}{R\+B\+Q\+U\+E\+U\+E} \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_a2d579cefafebe0f193a6a3ea99f4d1c6}{\index{lab.\+h@{lab.\+h}!deliver@{deliver}}
+\index{deliver@{deliver}!lab.\+h@{lab.\+h}}
+\paragraph[{deliver}]{\setlength{\rightskip}{0pt plus 5cm}void deliver (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a2d579cefafebe0f193a6a3ea99f4d1c6}
+This function will put out alerts when drivers or Orders are ready See the comments for more details. The message displayed is based on which of the queues are empty. This wee then cause the message to be displayed. 
+\begin{DoxyCode}
+10 \{
+11     
+12     \textcolor{keywordtype}{string} driverName;
+13     
+14     
+15     \textcolor{keywordflow}{if}(!\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && !\hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+16     \{
+17         \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_a53ab97610e4b96c9548d2ffe38108631}{Remove}(driverName);
+18         \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_ab8d52943d24188adf0855a0ee9fa0afe}{Remove}(\hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order});
+19         
+20         \textcolor{keywordtype}{string} alert = driverName + \textcolor{stringliteral}{", deliver one "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}
+21         + \textcolor{stringliteral}{" pizza at "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a6b9ce0a29de13c2c2f1721627dba4812}{address}; \textcolor{comment}{// create the string for the alert}
+22         
+23         cout << alert << endl;
+24         
+25         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+26         fl\_message(alert.c\_str()); \textcolor{comment}{//add in the message}
+27         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver}); \textcolor{comment}{//display it}
+28         
+29     \}
+30     
+31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.
+      \hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+32     \{
+33         
+34         \textcolor{keywordtype}{string} alert1 =\textcolor{stringliteral}{"Delivery for one "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}
+35         + \textcolor{stringliteral}{" pizza at "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a6b9ce0a29de13c2c2f1721627dba4812}{address}; \textcolor{comment}{//Create the string for the message}
+36         
+37         cout << alert1 << endl;
+38         
+39         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+40         fl\_message(alert1.c\_str()); \textcolor{comment}{// Add the message into the alert}
+41         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver}); \textcolor{comment}{//display it}
+42         
+43         
+44         
+45     \}
+46     
+47      \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && !\hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.
+      \hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+48     \{
+49         
+50         \textcolor{keywordtype}{string} alert2 = driverName + \textcolor{stringliteral}{" is now available"};
+51         
+52         cout << alert2 << endl;
+53         
+54         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+55         fl\_message(alert2.c\_str());
+56         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver});
+57         
+58         
+59         
+60     \}
+61 
+62 
+63 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_aa05ac27c7de405a78817cddb14e9f303}{\index{lab.\+h@{lab.\+h}!driver\+Cb@{driver\+Cb}}
+\index{driver\+Cb@{driver\+Cb}!lab.\+h@{lab.\+h}}
+\paragraph[{driver\+Cb}]{\setlength{\rightskip}{0pt plus 5cm}void driver\+Cb (
+\begin{DoxyParamCaption}
+\item[{Fl\+\_\+\+Callback}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_aa05ac27c7de405a78817cddb14e9f303}
+\hypertarget{lab_8h_a14029123842f0c00bf955eaeea529b17}{\index{lab.\+h@{lab.\+h}!order\+Cb@{order\+Cb}}
+\index{order\+Cb@{order\+Cb}!lab.\+h@{lab.\+h}}
+\paragraph[{order\+Cb}]{\setlength{\rightskip}{0pt plus 5cm}void order\+Cb (
+\begin{DoxyParamCaption}
+\item[{Fl\+\_\+\+Callback}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a14029123842f0c00bf955eaeea529b17}
+\hypertarget{lab_8h_a56ac87e7157d59fc25975adae5b10cb6}{\index{lab.\+h@{lab.\+h}!show\+Q@{show\+Q}}
+\index{show\+Q@{show\+Q}!lab.\+h@{lab.\+h}}
+\paragraph[{show\+Q}]{\setlength{\rightskip}{0pt plus 5cm}void show\+Q (
+\begin{DoxyParamCaption}
+\item[{Fl\+\_\+\+Callback $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a56ac87e7157d59fc25975adae5b10cb6}
+This function shows the the queues when the user presses Track order in the G\+U\+I. This function shows the addresses and the pizza as well as the drivers that are available. 
+\begin{DoxyCode}
+8 \{
+9     \textcolor{keywordtype}{string} orderlist;
+10     \textcolor{keywordtype}{string} driverlist;
+11     
+12     \textcolor{keyword}{static} Fl\_Cairo\_Window trackWindow(200, 200); \textcolor{comment}{//Build the window}
+13     trackWindow.label(\textcolor{stringliteral}{"Tracking Orders"});
+14     \textcolor{keyword}{static} Fl\_Text\_Buffer \hyperlink{lab_8h_aea2b8efadc87a819fe57c311d668e504}{buff};
+15     \textcolor{keyword}{static} Fl\_Text\_Display OrderQ(0,0, 200,200, \textcolor{stringliteral}{"Track Order:"});
+16     OrderQ.buffer(&buff);
+17     
+18     \textcolor{keywordtype}{string} o = \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_ac2b49f6579d59d4de02c17f456aa6f5e}{traverse}(\hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}); \textcolor{comment}{//using the traverse fucntion to
+       creat the list}
+19     \textcolor{keywordtype}{string} d = \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_ae554aac84a4435a51a5d0029050c30e3}{traverse}();
+20     o+=d;\textcolor{comment}{//This creates the list of Orders and Drivers}
+21     
+22     buff.text(o.c\_str());
+23     trackWindow.add(OrderQ);
+24     trackWindow.show(); \textcolor{comment}{//Displays the window}
+25 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_af7bd238954bf4d2d0f780d4d80eaf2b2}{\index{lab.\+h@{lab.\+h}!window@{window}}
+\index{window@{window}!lab.\+h@{lab.\+h}}
+\paragraph[{window}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Cairo\+\_\+\+Window$\ast$ window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_af7bd238954bf4d2d0f780d4d80eaf2b2}
+
+\begin{DoxyCode}
+18 \{
+19     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw} = \textcolor{keyword}{new} Fl\_Cairo\_Window(\hyperlink{lab_8h_a66326676d44c838441a4dc39c85f599b}{w},\hyperlink{lab_8h_a3f40fea9b1040e381f08ddd4b026765d}{h});
+20     
+21     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw}->label(\textcolor{stringliteral}{"Pizza Delivery Services"});
+22     
+23     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw}->color(FL\_GRAY);
+24     
+25     \hyperlink{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{Order} = \textcolor{keyword}{new} Fl\_Button(200,40,70,20,\textcolor{stringliteral}{"Order"});
+26     \hyperlink{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{Order}->callback((Fl\_Callback*)\hyperlink{lab_8h_a14029123842f0c00bf955eaeea529b17}{orderCb});
+27     
+28     \hyperlink{window_8cpp_a6737b513e36303ae81b9f65206239dec}{driver} = \textcolor{keyword}{new} Fl\_Button(200,90,70,20,\textcolor{stringliteral}{"Driver"});
+29     \hyperlink{window_8cpp_a6737b513e36303ae81b9f65206239dec}{driver}->callback((Fl\_Callback*)\hyperlink{driverCb_8cpp_a9c6487e79c76ee9ad1efcb3e0e91ad93}{driverCb});
+30     
+31     \hyperlink{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{tracker} = \textcolor{keyword}{new} Fl\_Button (150,130,90,30,\textcolor{stringliteral}{"Track Order"});
+32     \hyperlink{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{tracker}->callback((Fl\_Callback*)\hyperlink{lab_8h_a56ac87e7157d59fc25975adae5b10cb6}{showQ});
+33     
+34     \hyperlink{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{pizza} = \textcolor{keyword}{new} Fl\_Input(80,20,100,20,\textcolor{stringliteral}{"Pizza: "});
+35     \hyperlink{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{pizza} -> color(FL\_WHITE);
+36     
+37     \hyperlink{window_8cpp_a0ce7586472726848924b4964b80e69ba}{address} = \textcolor{keyword}{new} Fl\_Input(80,40,100,20, \textcolor{stringliteral}{"Address: "});
+38     \hyperlink{window_8cpp_a0ce7586472726848924b4964b80e69ba}{address}-> color(FL\_WHITE);
+39     
+40     \hyperlink{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{Driver} = \textcolor{keyword}{new} Fl\_Input(80,80,100,20, \textcolor{stringliteral}{"Driver: "});
+41     \hyperlink{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{Driver}-> color(FL\_WHITE);
+42     
+43     \textcolor{keywordflow}{return} \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw};
+44     
+45     
+46 \}
+\end{DoxyCode}
+
+
+\subsubsection{Variable Documentation}
+\hypertarget{lab_8h_a0ce7586472726848924b4964b80e69ba}{\index{lab.\+h@{lab.\+h}!address@{address}}
+\index{address@{address}!lab.\+h@{lab.\+h}}
+\paragraph[{address}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ address}}\label{lab_8h_a0ce7586472726848924b4964b80e69ba}
+\hypertarget{lab_8h_aea2b8efadc87a819fe57c311d668e504}{\index{lab.\+h@{lab.\+h}!buff@{buff}}
+\index{buff@{buff}!lab.\+h@{lab.\+h}}
+\paragraph[{buff}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Text\+\_\+\+Buffer$\ast$ buff}}\label{lab_8h_aea2b8efadc87a819fe57c311d668e504}
+\hypertarget{lab_8h_ad69f678058ac1e2c6d82212fd735b7a4}{\index{lab.\+h@{lab.\+h}!B\+U\+F\+S\+I\+Z\+E@{B\+U\+F\+S\+I\+Z\+E}}
+\index{B\+U\+F\+S\+I\+Z\+E@{B\+U\+F\+S\+I\+Z\+E}!lab.\+h@{lab.\+h}}
+\paragraph[{B\+U\+F\+S\+I\+Z\+E}]{\setlength{\rightskip}{0pt plus 5cm}const int B\+U\+F\+S\+I\+Z\+E = 10}}\label{lab_8h_ad69f678058ac1e2c6d82212fd735b7a4}
+\hypertarget{lab_8h_ac3a31ef741b6d40c85fd634017661a38}{\index{lab.\+h@{lab.\+h}!Driver@{Driver}}
+\index{Driver@{Driver}!lab.\+h@{lab.\+h}}
+\paragraph[{Driver}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ Driver}}\label{lab_8h_ac3a31ef741b6d40c85fd634017661a38}
+\hypertarget{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{\index{lab.\+h@{lab.\+h}!drivers@{drivers}}
+\index{drivers@{drivers}!lab.\+h@{lab.\+h}}
+\paragraph[{drivers}]{\setlength{\rightskip}{0pt plus 5cm}{\bf R\+B\+Q\+U\+E\+U\+E} drivers}}\label{lab_8h_a3dc8498494666cf6c70359b55fe9202c}
+\hypertarget{lab_8h_a3f40fea9b1040e381f08ddd4b026765d}{\index{lab.\+h@{lab.\+h}!h@{h}}
+\index{h@{h}!lab.\+h@{lab.\+h}}
+\paragraph[{h}]{\setlength{\rightskip}{0pt plus 5cm}const int h = 300}}\label{lab_8h_a3f40fea9b1040e381f08ddd4b026765d}
+\hypertarget{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{\index{lab.\+h@{lab.\+h}!order@{order}}
+\index{order@{order}!lab.\+h@{lab.\+h}}
+\paragraph[{order}]{\setlength{\rightskip}{0pt plus 5cm}{\bf O\+R\+D\+E\+R} order}}\label{lab_8h_a9b6b9e3013897906bcd799b34de83de3}
+This is the main function which creates the objects for the lists and structs It also passes control to Fltk and runs the Fltk G\+U\+I. The code of the G\+U\+I can be seen in \hyperlink{window_8cpp}{window.\+cpp} \hypertarget{lab_8h_a23f917547a833922fd6bc8797cc04ee1}{\index{lab.\+h@{lab.\+h}!order\+Q@{order\+Q}}
+\index{order\+Q@{order\+Q}!lab.\+h@{lab.\+h}}
+\paragraph[{order\+Q}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Text\+\_\+\+Display$\ast$ order\+Q}}\label{lab_8h_a23f917547a833922fd6bc8797cc04ee1}
+\hypertarget{lab_8h_af9cad0e28281b8add71f55142323def6}{\index{lab.\+h@{lab.\+h}!pending\+Order@{pending\+Order}}
+\index{pending\+Order@{pending\+Order}!lab.\+h@{lab.\+h}}
+\paragraph[{pending\+Order}]{\setlength{\rightskip}{0pt plus 5cm}{\bf L\+L\+Q\+U\+E\+U\+E} pending\+Order}}\label{lab_8h_af9cad0e28281b8add71f55142323def6}
+\hypertarget{lab_8h_abf805c82a90897837d1c26ef915f1cd6}{\index{lab.\+h@{lab.\+h}!pizza@{pizza}}
+\index{pizza@{pizza}!lab.\+h@{lab.\+h}}
+\paragraph[{pizza}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ pizza}}\label{lab_8h_abf805c82a90897837d1c26ef915f1cd6}
+\hypertarget{lab_8h_a66326676d44c838441a4dc39c85f599b}{\index{lab.\+h@{lab.\+h}!w@{w}}
+\index{w@{w}!lab.\+h@{lab.\+h}}
+\paragraph[{w}]{\setlength{\rightskip}{0pt plus 5cm}const int w = 300}}\label{lab_8h_a66326676d44c838441a4dc39c85f599b}
+\hypertarget{lab_8h_a05c7f6e86cca5f4d0ebf44d1f5042c37}{\index{lab.\+h@{lab.\+h}!watch@{watch}}
+\index{watch@{watch}!lab.\+h@{lab.\+h}}
+\paragraph[{watch}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Output$\ast$ watch}}\label{lab_8h_a05c7f6e86cca5f4d0ebf44d1f5042c37}

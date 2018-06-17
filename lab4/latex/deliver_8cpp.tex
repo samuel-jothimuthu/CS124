@@ -1,0 +1,85 @@
+\hypertarget{deliver_8cpp}{\subsection{deliver.\+cpp File Reference}
+\label{deliver_8cpp}\index{deliver.\+cpp@{deliver.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for deliver.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{deliver_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver} (void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{\index{deliver.\+cpp@{deliver.\+cpp}!deliver@{deliver}}
+\index{deliver@{deliver}!deliver.\+cpp@{deliver.\+cpp}}
+\paragraph[{deliver}]{\setlength{\rightskip}{0pt plus 5cm}void deliver (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}
+This function will put out alerts when drivers or Orders are ready See the comments for more details. The message displayed is based on which of the queues are empty. This wee then cause the message to be displayed. 
+\begin{DoxyCode}
+10 \{
+11     
+12     \textcolor{keywordtype}{string} driverName;
+13     
+14     
+15     \textcolor{keywordflow}{if}(!\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && !\hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+16     \{
+17         \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_a53ab97610e4b96c9548d2ffe38108631}{Remove}(driverName);
+18         \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_ab8d52943d24188adf0855a0ee9fa0afe}{Remove}(\hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order});
+19         
+20         \textcolor{keywordtype}{string} alert = driverName + \textcolor{stringliteral}{", deliver one "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}
+21         + \textcolor{stringliteral}{" pizza at "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a6b9ce0a29de13c2c2f1721627dba4812}{address}; \textcolor{comment}{// create the string for the alert}
+22         
+23         cout << alert << endl;
+24         
+25         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+26         fl\_message(alert.c\_str()); \textcolor{comment}{//add in the message}
+27         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver}); \textcolor{comment}{//display it}
+28         
+29     \}
+30     
+31     \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (!\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.
+      \hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+32     \{
+33         
+34         \textcolor{keywordtype}{string} alert1 =\textcolor{stringliteral}{"Delivery for one "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}
+35         + \textcolor{stringliteral}{" pizza at "} + \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a6b9ce0a29de13c2c2f1721627dba4812}{address}; \textcolor{comment}{//Create the string for the message}
+36         
+37         cout << alert1 << endl;
+38         
+39         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+40         fl\_message(alert1.c\_str()); \textcolor{comment}{// Add the message into the alert}
+41         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver}); \textcolor{comment}{//display it}
+42         
+43         
+44         
+45     \}
+46     
+47      \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{isEmpty}() && !\hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.
+      \hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}())
+48     \{
+49         
+50         \textcolor{keywordtype}{string} alert2 = driverName + \textcolor{stringliteral}{" is now available"};
+51         
+52         cout << alert2 << endl;
+53         
+54         fl\_message\_title(\textcolor{stringliteral}{"Pizza Time!"});
+55         fl\_message(alert2.c\_str());
+56         Fl::repeat\_timeout(5.0,\hyperlink{deliver_8cpp_a2d579cefafebe0f193a6a3ea99f4d1c6}{deliver});
+57         
+58         
+59         
+60     \}
+61 
+62 
+63 \}
+\end{DoxyCode}

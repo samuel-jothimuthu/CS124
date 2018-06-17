@@ -1,0 +1,80 @@
+/** \page Specification
+This is the Morse Code Translator. This lab utilizes a binary search tree
+to translate an English phrase into morse code (encode). It uses a similar tree to
+translate morse code into English (decode). The entire program is run on an 
+html webpage that gives useful UI and a ease of navigation.
+
+Features:
+
+1) A user can encode or decode a message.
+
+2) The message is clear and easy to read.
+
+3) UI is very easy and clear to use.
+
+*/
+
+/** \page Analysis
+When the user goes to the html page enters their information and clicks submit
+the program begins to run. Immediatly the translation based upon whatever the user 
+selects will become available and the user can see it. The program is as simple as that.
+The code uses a binary search tree to find and create the translation. 
+The Design section will explain this more thoroughly. 
+*/
+
+/** \page Design
+Html was what we used to create the UI for this lab. THe translation program however was
+done in C++. We implemented a binary tree which basically allows us to store elements that
+can reference elements lower than it. Like tree -> branches -> twigs -> leaves. The idea is
+that only an element of lower value can be stored in bottom of another element and lower is 
+on the left and greater on the right. So in our lab a . was considered lower and a - was conidered
+higher. This allowed us to reference letters within the tree very quickly. 
+*/
+
+/** \page "Test: Morse 1"
+
+\image latex "morse1.PNG" "Morse code to be decoded" width=15cm
+
+*/
+
+/** \page "Test: Morse 2"
+
+\image latex "morse2.PNG" "Morse code decoded" width=15cm
+
+*/
+
+/** \page "Test: Morse Verified"
+
+\image latex "morse3.png" "Morse code verified" width=15cm
+
+*/
+
+/** \page "Test: English 1"
+
+\image latex "english1.png" "English text to be encoded" width=15cm
+
+*/
+
+/** \page "Test: English 2"
+
+\image latex "english2.png" "English text encoded" width=15cm
+
+*/
+
+/** \page "Test: English Verified"
+
+\image latex "english3.png" "English text verified" width=15cm
+
+*/
+
+/** \page "Morse Binary Tree"
+
+\image latex "morseTree.eps" "Morse Tree" width=15cm
+
+*/
+
+/** \page "HTML"
+
+\verbinclude morse.html
+
+*/

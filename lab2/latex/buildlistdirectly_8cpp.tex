@@ -1,0 +1,55 @@
+\hypertarget{buildlistdirectly_8cpp}{\subsection{buildlistdirectly.\+cpp File Reference}
+\label{buildlistdirectly_8cpp}\index{buildlistdirectly.\+cpp@{buildlistdirectly.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for buildlistdirectly.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{buildlistdirectly_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{buildlistdirectly_8cpp_a9eb7dfa9761b11c255d499765ea70b75}{builddirectly} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, string cities)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{buildlistdirectly_8cpp_a9eb7dfa9761b11c255d499765ea70b75}{\index{buildlistdirectly.\+cpp@{buildlistdirectly.\+cpp}!builddirectly@{builddirectly}}
+\index{builddirectly@{builddirectly}!buildlistdirectly.\+cpp@{buildlistdirectly.\+cpp}}
+\paragraph[{builddirectly}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} builddirectly (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{string}]{cities}
+\end{DoxyParamCaption}
+)}}\label{buildlistdirectly_8cpp_a9eb7dfa9761b11c255d499765ea70b75}
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordtype}{string} city;
+7     \hyperlink{structNODE}{NODE}* tail; 
+8     ifstream ifs(\textcolor{stringliteral}{"cities"});
+9     \textcolor{keywordflow}{if} (! ifs) 
+10     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+11     
+12 \textcolor{keywordflow}{while}(ifs >> city) \{
+13     \hyperlink{structNODE}{NODE} *newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+14     \textcolor{keywordflow}{if}(!newnode)
+15     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+16     
+17     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+18     
+19     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = 0;
+20     
+21      \textcolor{keywordflow}{if}(!tail) \{
+22         head = newnode;\}
+23     \textcolor{keywordflow}{else} \{
+24         tail->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode;
+25     \}
+26     tail = newnode;
+27     
+28 \}
+29 \}
+\end{DoxyCode}

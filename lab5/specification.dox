@@ -1,0 +1,65 @@
+/** \page Specification
+This is the AQI sorting program. It uses a variety of sorting alogrithms to
+sort the AQI or air quality index of multiple counties from low to high. Sorting 
+algorithms each have different levels of efficieny so our main focus is to test
+and see which algorithm is the best to use for our data. We use Bubble, Selection,
+Insertion, Merge, and Quick sorting algorithms. The UI is done on an a page
+formatted with html.
+
+Features:
+
+1) A user can test multiple sorting algorithms.
+
+2) The user can check the times each alorithm took.
+
+3) UI is very easy and clear to use.
+
+*/
+
+/** \page Analysis
+When the user goes to the html page the program is already running. Here the user
+will be greeted by 6 options to select from. 5 of these options are sorting 
+algorithms the other one is an option to see the times it takes for them to sort.
+When a sort is selected the page will load the name of the sort and then all the sorted info
+below it. Th fastest sort was quick sort which took less than a second. The slowest 
+was bubble which varied from 40 seconds to 3 minutes. 
+
+*/
+
+/** \page Design
+Html was what ws used to create the UI for this lab. we were able to have
+buttons to select wha  we wanted and customize the page very well. Html is 
+widely used in the industry so adopting this platfrom was the propper move.
+The biggest advantage I see is that I am able to edit, change, and add things
+very easily and I do not need the user to have certain libraries installed for
+them to see this. 
+*/
+/** \page Test 
+
+\latexonly
+\includegraphics{../aqi.png}
+
+
+\includegraphics{../Bubble.png}
+
+
+\includegraphics{../insertion.png}
+
+
+\includegraphics{../merge.png}
+
+
+\includegraphics{../quick.png}
+
+
+\includegraphics{../selection.png}
+
+
+\includegraphics{../times.png}
+
+
+\endlatexonly
+
+*/
+
+

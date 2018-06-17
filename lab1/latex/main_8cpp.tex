@@ -1,0 +1,80 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+This is main function of the project. Contains the three fucntions (loaddictionary, foundwords, addwords) See comments for better understanding 
+\begin{DoxyCode}
+11 \{
+12     vector<Entry> dict;
+13     \textcolor{keywordtype}{string} word; \textcolor{comment}{// user inputs word}
+14     \textcolor{keywordtype}{string} translation; \textcolor{comment}{// outputs translation}
+15     \textcolor{keywordtype}{bool} ok, quit;
+16     
+17     ok = \hyperlink{lab_8h_ac18625e34f66c3bc052e07dfb0d3d219}{loaddictionary}(\textcolor{stringliteral}{"dict.dat"}, dict);
+18     \textcolor{keywordflow}{if} (!ok) \{
+19         cout << \textcolor{stringliteral}{" **** Cannot load Dictionary ***** \(\backslash\)n"};
+20         \textcolor{keywordflow}{return} 1; \textcolor{comment}{//ERROR}
+21     \}
+22     
+23     
+24     \textcolor{keywordtype}{string} line;
+25     
+26  ifstream inpfile(\textcolor{stringliteral}{"dict.dat"}); \textcolor{comment}{//opening file again so that once updated }
+27     \textcolor{keywordflow}{if} (!inpfile) \textcolor{keywordflow}{return} \textcolor{keyword}{false}; \textcolor{comment}{//the new information can be called without restarting the program}
+28     
+29     getline(inpfile, line);
+30     cout << line << endl;
+31     cout << \textcolor{stringliteral}{"Program by Samuel Jothimuthu"} <<endl;
+32 
+33     quit = \textcolor{keyword}{false};
+34     \textcolor{keywordflow}{while} (!quit) \{ \textcolor{comment}{//iteration control structure}
+35         \hyperlink{lab_8h_ac18625e34f66c3bc052e07dfb0d3d219}{loaddictionary}(\textcolor{stringliteral}{"dict.dat"}, dict);
+36 
+37         \textcolor{keywordtype}{string} choice; \textcolor{comment}{//simple choice of yes or no }
+38         \textcolor{keywordtype}{string} newtran; \textcolor{comment}{//new translation for word user enters}
+39         \textcolor{keywordtype}{string} inputstring; \textcolor{comment}{// the full string that will be appened to the file "dict.dat"}
+40         cout << \textcolor{stringliteral}{"Enter a word or 'q' to quit ==> "};
+41         cin >> word;
+42         cin.ignore(80, \textcolor{charliteral}{'\(\backslash\)n'}); \textcolor{comment}{//this allows the console argument to execute but skipping the line}
+43         \textcolor{keywordflow}{if} (word == \textcolor{stringliteral}{"q"}) 
+44             quit = \textcolor{keyword}{true};
+45         \textcolor{keywordflow}{else} \textcolor{keywordflow}{if} (\hyperlink{foundWord_8cpp_ae41eba27837d0aeea84fb5c6824388db}{foundword}( dict, word, translation)) \textcolor{comment}{//function must return true}
+46             cout << translation << \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)n"};
+47         \textcolor{keywordflow}{else} \textcolor{comment}{//The selection control structure}
+48            \{ cout << word << \textcolor{stringliteral}{" --not in the dictionary. \(\backslash\)n Would you like to add it? (y/n)\(\backslash\)n"};
+49             cin >> choice;
+50             \textcolor{keywordflow}{if} (choice == \textcolor{stringliteral}{"y"}) \{ \textcolor{comment}{//any other input does not work. }
+51                 cout << \textcolor{stringliteral}{"What is the Italian translation for "} << word << \textcolor{stringliteral}{"?"} << endl;
+52                 cin >> newtran;
+53                 inputstring = word + \textcolor{stringliteral}{"\(\backslash\)t"} + newtran; \textcolor{comment}{// this builds the full string that the program can
+       then call upon.}
+54                 \hyperlink{addWords_8cpp_ab5aa985d3bd8d2b89a2d5f35f38fb868}{addwords}(\textcolor{stringliteral}{"dict.dat"}, inputstring); \textcolor{comment}{//runs the addwords function, adding it into the
+       file.}
+55                 \}
+56         \}
+57         \}
+58         \textcolor{keywordflow}{return} 0;
+59     \}
+\end{DoxyCode}

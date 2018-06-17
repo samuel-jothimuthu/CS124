@@ -1,0 +1,39 @@
+\begin{theindex}
+
+  \item {close}
+    \subitem {Telegraph}, \hyperpage{23}
+
+  \indexspace
+
+  \item {decode}
+    \subitem {Telegraph}, \hyperpage{23}
+
+  \indexspace
+
+  \item {encode}
+    \subitem {Telegraph}, \hyperpage{24}
+
+  \indexspace
+
+  \item {Morse\+Code}
+    \subitem {N}, \hyperpage{22}
+
+  \indexspace
+
+  \item {N}
+    \subitem {Morse\+Code}, \hyperpage{22}
+
+  \indexspace
+
+  \item {open}
+    \subitem {Telegraph}, \hyperpage{25}
+
+  \indexspace
+
+  \item {Telegraph}, \hyperpage{23}
+    \subitem {close}, \hyperpage{23}
+    \subitem {decode}, \hyperpage{23}
+    \subitem {encode}, \hyperpage{24}
+    \subitem {open}, \hyperpage{25}
+
+\end{theindex}

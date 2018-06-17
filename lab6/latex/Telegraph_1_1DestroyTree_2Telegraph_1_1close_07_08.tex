@@ -1,0 +1,12 @@
+Traverses the binary tree, deleting each node until finally deleting the root node itself
+
+The root node is passed in and begins the deletion process. The close function calls Destroy\+Tree, a recursive function that will traverse the tree until it hits the end of both sides. Once that happens, the nodes are deleted until it reaches root. Root is then deleted, triggering the base case where a node does not exist, ending the function
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em $\ast$node} & The root node of the binary tree \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+void 
+\end{DoxyReturn}

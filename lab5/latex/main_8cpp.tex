@@ -1,0 +1,135 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+{\ttfamily \#include \char`\"{}S\+O\+M\+E\+T\+Y\+P\+E.\+hpp\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{main_8cpp_aa594fce724d61d0087fb9ca98b9d6ec2}{list} ()
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_aa594fce724d61d0087fb9ca98b9d6ec2}{\index{main.\+cpp@{main.\+cpp}!list@{list}}
+\index{list@{list}!main.\+cpp@{main.\+cpp}}
+\paragraph[{list}]{\setlength{\rightskip}{0pt plus 5cm}void list (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_aa594fce724d61d0087fb9ca98b9d6ec2}
+This is the main function. It handles most of the control Every If statement is a different sort It takes data from the html file and then and then choses which sorting algorithm to use. This also reads and writes to a file called times.\+txt This stores the times each sort took so we can compare the n$^\wedge$2 and n log n sort. We use Bubble, Selection, Insertion for n$^\wedge$2 and Merge and Quick sort for n log n. \hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+
+\begin{DoxyCode}
+17 \{
+18     \textcolor{keywordtype}{string} s = getenv(\textcolor{stringliteral}{"QUERY\_STRING"});
+19     \textcolor{keywordtype}{string} f = \textcolor{stringliteral}{"/home/debian/data/aqi.csv"};
+20     \textcolor{keywordtype}{int} n = \hyperlink{countRows_8cpp_af79b062a38e004faf58461580fe91f54}{countRows}(f);
+21     \hyperlink{structAQIData}{AQIData}* aqi = \textcolor{keyword}{new} \hyperlink{structAQIData}{AQIData}[n];
+22     
+23     \hyperlink{classMERGESORT}{MERGESORT<AQIData>} mergesort(n);
+24     \hyperlink{classQUICKSORT}{QUICKSORT<AQIData>} quicksort;
+25     
+26     \hyperlink{lab_8h_afa2b122c9605683c5ad06505f8d3ea0a}{readData}(f,aqi,n);
+27     
+28     \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=time"})
+29     \{
+30           \hyperlink{lab_8h_abed4d504ddb0a41eff492be7984941f2}{readtimes}();
+31     \}
+32     \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=Bubble"})
+33     \{
+34         cout << \textcolor{stringliteral}{"Bubble Sort"} << endl;
+35         \textcolor{keyword}{auto} t1 = std::chrono::high\_resolution\_clock::now();
+36         \hyperlink{lab_8h_a520e61585767c06f36e3afdf0fb70aa5}{BubbleSort}(aqi, n);
+37         \textcolor{keyword}{auto} t2 = std::chrono::high\_resolution\_clock::now();
+38         \textcolor{keyword}{auto} time\_span = std::chrono::duration\_cast<std::chrono::duration<double>>(t2-t1);
+39         \textcolor{keywordtype}{double} time = time\_span.count();
+40         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"Time taken to Bubble sort in seconds: "} + std::to\_string(time);
+41         \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes}(\textcolor{stringliteral}{"times.txt"}, str); 
+42         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+43         \{
+44         cout << left << setw(7) << \textcolor{stringliteral}{"County: "} << left << setw(30) << aqi[i].
+      \hyperlink{structAQIData_a8491fd5d9608d9be9f820868780a97b8}{county};
+45         cout  <<  \textcolor{stringliteral}{"AQI Data: "}<< aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} << endl;
+46         \}               
+47     \}
+48     \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=Selection"})
+49     \{
+50         cout << \textcolor{stringliteral}{"Selection"} << endl;
+51         \textcolor{keyword}{auto} t1 = std::chrono::high\_resolution\_clock::now();
+52         \hyperlink{SOMETYPE_8hpp_a9a880ce4a129ca9ce6012f13d4c0dac4}{SelectionSort}(aqi, n);
+53         \textcolor{keyword}{auto} t2 = std::chrono::high\_resolution\_clock::now();
+54         \textcolor{keyword}{auto} time\_span = std::chrono::duration\_cast<std::chrono::duration<double>>(t2-t1);
+55         \textcolor{keywordtype}{double} time = time\_span.count();
+56         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"Time taken to Selection sort in seconds: "} + std::to\_string(time);
+57         \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes}(\textcolor{stringliteral}{"times.txt"}, str); 
+58         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+59         \{
+60         cout << left << setw(7) << \textcolor{stringliteral}{"County: "} << left << setw(30) << aqi[i].
+      \hyperlink{structAQIData_a8491fd5d9608d9be9f820868780a97b8}{county};
+61         cout  <<  \textcolor{stringliteral}{"AQI Data: "}<< aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} << endl;
+62         \}
+63     \}
+64     \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=Insertion"})
+65     \{
+66         cout << \textcolor{stringliteral}{"Insertion"} << endl;
+67         \textcolor{keyword}{auto} t1 = std::chrono::high\_resolution\_clock::now();
+68         \hyperlink{SOMETYPE_8hpp_a83f6f0902ced17d992f7d3b0aa991f7d}{InsertionSort}(aqi, n); 
+69         \textcolor{keyword}{auto} t2 = std::chrono::high\_resolution\_clock::now();
+70         \textcolor{keyword}{auto} time\_span = std::chrono::duration\_cast<std::chrono::duration<double>>(t2-t1);
+71         \textcolor{keywordtype}{double} time = time\_span.count();
+72         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"Time taken to Insertion sort in seconds: "} + std::to\_string(time);
+73         \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes}(\textcolor{stringliteral}{"times.txt"}, str); 
+74         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+75         \{
+76         cout << left << setw(7) << \textcolor{stringliteral}{"County: "} << left << setw(30) << aqi[i].
+      \hyperlink{structAQIData_a8491fd5d9608d9be9f820868780a97b8}{county};
+77         cout  <<  \textcolor{stringliteral}{"AQI Data: "}<< aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} << endl;
+78         \}
+79     \}
+80     \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=Merge"})
+81     \{
+82         cout << \textcolor{stringliteral}{"Merge Sort"} << endl;
+83         \textcolor{keyword}{auto} t1 = std::chrono::high\_resolution\_clock::now();
+84         mergesort.Sort(aqi, n);
+85         \textcolor{keyword}{auto} t2 = std::chrono::high\_resolution\_clock::now();
+86         \textcolor{keyword}{auto} time\_span = std::chrono::duration\_cast<std::chrono::duration<double>>(t2-t1);
+87         \textcolor{keywordtype}{double} time = time\_span.count();
+88         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"Time taken to Merge sort in seconds: "} + std::to\_string(time);
+89         \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes}(\textcolor{stringliteral}{"times.txt"}, str);
+90         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+91         \{
+92         cout << left << setw(7) << \textcolor{stringliteral}{"County: "} << left << setw(30) << aqi[i].
+      \hyperlink{structAQIData_a8491fd5d9608d9be9f820868780a97b8}{county};
+93         cout  <<  \textcolor{stringliteral}{"AQI Data: "}<< aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} << endl;
+94         \}
+95        \}
+96         \textcolor{keywordflow}{if}(s == \textcolor{stringliteral}{"o=Quick"})
+97     \{
+98         cout << \textcolor{stringliteral}{"Quick Sort"} << endl;
+99         \textcolor{keyword}{auto} t1 = std::chrono::high\_resolution\_clock::now();
+100         quicksort.\hyperlink{classQUICKSORT_a887986883eb752498aac3e329d993ce5}{Sort}(aqi, n);
+101         \textcolor{keyword}{auto} t2 = std::chrono::high\_resolution\_clock::now();
+102         \textcolor{keyword}{auto} time\_span = std::chrono::duration\_cast<std::chrono::duration<double>>(t2-t1);
+103         \textcolor{keywordtype}{double} time = time\_span.count();
+104         \textcolor{keywordtype}{string} str = \textcolor{stringliteral}{"Time taken to Quick sort in seconds: "} + std::to\_string(time);
+105         \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes}(\textcolor{stringliteral}{"times.txt"}, str);
+106         \textcolor{keywordflow}{for}(\textcolor{keywordtype}{int} i = 0; i < n; i++)
+107         \{
+108         cout << left << setw(7) << \textcolor{stringliteral}{"County: "} << left << setw(30) << aqi[i].
+      \hyperlink{structAQIData_a8491fd5d9608d9be9f820868780a97b8}{county};
+109         cout  <<  \textcolor{stringliteral}{"AQI Data: "}<< aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} << endl;
+110         \}
+111     \}
+112     
+113     \textcolor{keywordflow}{return} 0;    
+114 \}
+\end{DoxyCode}

@@ -1,0 +1,31 @@
+\hypertarget{countRows_8cpp}{\subsection{count\+Rows.\+cpp File Reference}
+\label{countRows_8cpp}\index{count\+Rows.\+cpp@{count\+Rows.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{countRows_8cpp_af79b062a38e004faf58461580fe91f54}{count\+Rows} (string f)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{countRows_8cpp_af79b062a38e004faf58461580fe91f54}{\index{count\+Rows.\+cpp@{count\+Rows.\+cpp}!count\+Rows@{count\+Rows}}
+\index{count\+Rows@{count\+Rows}!count\+Rows.\+cpp@{count\+Rows.\+cpp}}
+\paragraph[{count\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Rows (
+\begin{DoxyParamCaption}
+\item[{string}]{f}
+\end{DoxyParamCaption}
+)}}\label{countRows_8cpp_af79b062a38e004faf58461580fe91f54}
+
+\begin{DoxyCode}
+3 \{
+4     std::ifstream ifs(f.c\_str());
+5     \textcolor{keywordtype}{int} n = 0;
+6     \textcolor{keywordtype}{string} s;
+7     \textcolor{keywordflow}{while}(getline(ifs,s)) n++;
+8     
+9     
+10     \textcolor{keywordflow}{return} n;
+11 \}
+\end{DoxyCode}

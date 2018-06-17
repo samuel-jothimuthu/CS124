@@ -1,0 +1,298 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+Include dependency graph for lab.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{lab_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structNODE}{N\+O\+D\+E}
+\begin{DoxyCompactList}\small\item\em City Structure. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+enum \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \{ \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{F\+A\+I\+L\+E\+D}, 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{O\+K}
+ \}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab_8h_a578b73f866dc4391d05ca0219f892495}{insert} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, std\+::string city)
+\begin{DoxyCompactList}\small\item\em Insert inserts a new node at the beginning of the list. \end{DoxyCompactList}\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab_8h_abf14767ea6c86eb593d6f87fe77267e7}{insertinorder} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, std\+::string city)
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{lab_8h_a9eb7dfa9761b11c255d499765ea70b75}{builddirectly} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, string cities)
+\item 
+void \hyperlink{lab_8h_a67a34562a85e577c0921c5d65c22decc}{destroylist} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\item 
+void \hyperlink{lab_8h_a6b2cb293574fc5dc8d7a4897cacea16f}{displaylist} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\item 
+\hyperlink{structNODE}{N\+O\+D\+E} $\ast$ \hyperlink{lab_8h_afd6087490d82489b892a41298eba4e60}{loadlist} (std\+::string filename)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Enumeration Type Documentation}
+\hypertarget{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{\index{lab.\+h@{lab.\+h}!S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}}
+\index{S\+T\+A\+T\+U\+S@{S\+T\+A\+T\+U\+S}!lab.\+h@{lab.\+h}}
+\paragraph[{S\+T\+A\+T\+U\+S}]{\setlength{\rightskip}{0pt plus 5cm}enum {\bf S\+T\+A\+T\+U\+S}}}\label{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}
+\begin{Desc}
+\item[Enumerator]\par
+\begin{description}
+\index{F\+A\+I\+L\+E\+D@{F\+A\+I\+L\+E\+D}!lab.\+h@{lab.\+h}}\index{lab.\+h@{lab.\+h}!F\+A\+I\+L\+E\+D@{F\+A\+I\+L\+E\+D}}\item[{\em 
+\hypertarget{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{F\+A\+I\+L\+E\+D}\label{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}
+}]\index{O\+K@{O\+K}!lab.\+h@{lab.\+h}}\index{lab.\+h@{lab.\+h}!O\+K@{O\+K}}\item[{\em 
+\hypertarget{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{O\+K}\label{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}
+}]\end{description}
+\end{Desc}
+
+\begin{DoxyCode}
+7 \{\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED}, \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}\};
+\end{DoxyCode}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_a9eb7dfa9761b11c255d499765ea70b75}{\index{lab.\+h@{lab.\+h}!builddirectly@{builddirectly}}
+\index{builddirectly@{builddirectly}!lab.\+h@{lab.\+h}}
+\paragraph[{builddirectly}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} builddirectly (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{string}]{cities}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a9eb7dfa9761b11c255d499765ea70b75}
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordtype}{string} city;
+7     \hyperlink{structNODE}{NODE}* tail; 
+8     ifstream ifs(\textcolor{stringliteral}{"cities"});
+9     \textcolor{keywordflow}{if} (! ifs) 
+10     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+11     
+12 \textcolor{keywordflow}{while}(ifs >> city) \{
+13     \hyperlink{structNODE}{NODE} *newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+14     \textcolor{keywordflow}{if}(!newnode)
+15     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+16     
+17     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+18     
+19     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = 0;
+20     
+21      \textcolor{keywordflow}{if}(!tail) \{
+22         head = newnode;\}
+23     \textcolor{keywordflow}{else} \{
+24         tail->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode;
+25     \}
+26     tail = newnode;
+27     
+28 \}
+29 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a67a34562a85e577c0921c5d65c22decc}{\index{lab.\+h@{lab.\+h}!destroylist@{destroylist}}
+\index{destroylist@{destroylist}!lab.\+h@{lab.\+h}}
+\paragraph[{destroylist}]{\setlength{\rightskip}{0pt plus 5cm}void destroylist (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a67a34562a85e577c0921c5d65c22decc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head} & This is the only parameter the function takes.\\
+\hline
+\end{DoxyParams}
+This function completely destroys the list.
+
+
+\begin{DoxyImage}
+\includegraphics{destroylist1}
+\caption{Linked List}
+\end{DoxyImage}
+ As you can see that this function points the head at the node and then deletes it severing the tie to the list 
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{structNODE}{NODE}* node;
+16     \textcolor{keywordflow}{for}(node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+17     \{
+18         cout << \textcolor{stringliteral}{"deleting: "}
+19             << node->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} << std::endl;
+20         \hyperlink{structNODE}{NODE}* tmp = head->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+21         \textcolor{keyword}{delete} head;
+22         head = tmp;
+23         
+24     \}
+25     
+26 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a6b2cb293574fc5dc8d7a4897cacea16f}{\index{lab.\+h@{lab.\+h}!displaylist@{displaylist}}
+\index{displaylist@{displaylist}!lab.\+h@{lab.\+h}}
+\paragraph[{displaylist}]{\setlength{\rightskip}{0pt plus 5cm}void displaylist (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a6b2cb293574fc5dc8d7a4897cacea16f}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head} & This fucntion only takes a pointer as an argument.\\
+\hline
+\end{DoxyParams}
+This function displays/traverses the list This is what a linked list looks like to a user It traverses the list without manipulating any pointers. See the comments for further deatils 
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//first we set the node pointer equal to the head pointer}
+13     \textcolor{comment}{//Then while node exists this loop continues}
+14     \textcolor{comment}{//Then we set the pointer equal to the next pointer }
+15 
+16     \textcolor{keywordflow}{for}(\hyperlink{structNODE}{NODE}* node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+17     \textcolor{comment}{//This displays the data within the node}
+18     cout << node->city << endl;
+19 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a578b73f866dc4391d05ca0219f892495}{\index{lab.\+h@{lab.\+h}!insert@{insert}}
+\index{insert@{insert}!lab.\+h@{lab.\+h}}
+\paragraph[{insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} insert (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{std\+::string}]{city}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a578b73f866dc4391d05ca0219f892495}
+
+
+Insert inserts a new node at the beginning of the list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em head} & The head of the linked list \\
+\hline
+\mbox{\tt in}  & {\em city} & The data in the node being inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+T\+A\+T\+U\+S indicating if Insert was successful of not
+\end{DoxyReturn}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em head} & The head of the linked list \\
+\hline
+\mbox{\tt in}  & {\em city} & The data in the node being inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+T\+A\+T\+U\+S indicating if Insert was successful of not 
+\begin{DoxyImage}
+\includegraphics{insert}
+\caption{Linked List}
+\end{DoxyImage}
+ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//city = "Dublin"}
+13     \hyperlink{structNODE}{NODE} *newnode;
+14     
+15     \textcolor{comment}{// Allocate a new node:}
+16     
+17     newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+18     \textcolor{keywordflow}{if} (!newnode)
+19         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED}; 
+20     \textcolor{comment}{//copy the info into the new node:}
+21     
+22     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+23     
+24     \textcolor{comment}{//Link the new node to the list:}
+25     
+26     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = head;
+27     head = newnode; 
+28     
+29     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}; 
+30 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_abf14767ea6c86eb593d6f87fe77267e7}{\index{lab.\+h@{lab.\+h}!insertinorder@{insertinorder}}
+\index{insertinorder@{insertinorder}!lab.\+h@{lab.\+h}}
+\paragraph[{insertinorder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} insertinorder (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{std\+::string}]{city}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_abf14767ea6c86eb593d6f87fe77267e7}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head,string} & This functions takes in the head and a string which is whatever city the user defines\\
+\hline
+\end{DoxyParams}
+This function inserts a city into the list in a specific order.
+
+
+\begin{DoxyImage}
+\includegraphics{insertinorder}
+\caption{Linked List}
+\end{DoxyImage}
+ This shows how the pointers previous and next work as they traverse the list looking for a place to insert. Once it does it changes the pointers to add the value into the list 
+\begin{DoxyCode}
+16 \{
+17     \hyperlink{structNODE}{NODE} *newnode;
+18      \textcolor{comment}{// Allocate a new node:}
+19      
+20     newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+21     \textcolor{keywordflow}{if} (!newnode)
+22         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+23         
+24     \textcolor{comment}{// Copy the info into newnode:}
+25     
+26     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+27     
+28     \textcolor{comment}{// LINK newnode to the list:}
+29     \textcolor{comment}{// a) Find the right place to insert newnode (between "prev" and "node":}
+30     
+31     \hyperlink{structNODE}{NODE} *\hyperlink{structNODE}{NODE} = head, *prev = 0;
+32     \textcolor{keywordflow}{while} (NODE && NODE->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} <= city) \{
+33         \textcolor{comment}{//node->city <= city}
+34     prev = NODE;        \textcolor{comment}{//advance node and prev}
+35     NODE = NODE->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+36 \}
+37     \textcolor{comment}{// b) Link newnode between prev and node}
+38     
+39     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = NODE; \textcolor{comment}{//append node to newnode}
+40     \textcolor{keywordflow}{if} (prev)
+41         prev->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode; \textcolor{comment}{//Insert after "prev"}
+42     \textcolor{keywordflow}{else} 
+43         head = newnode; \textcolor{comment}{//No prev: make new node the new head}
+44         
+45         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+46     \}
+\end{DoxyCode}
+\hypertarget{lab_8h_afd6087490d82489b892a41298eba4e60}{\index{lab.\+h@{lab.\+h}!loadlist@{loadlist}}
+\index{loadlist@{loadlist}!lab.\+h@{lab.\+h}}
+\paragraph[{loadlist}]{\setlength{\rightskip}{0pt plus 5cm}{\bf N\+O\+D\+E}$\ast$ loadlist (
+\begin{DoxyParamCaption}
+\item[{std\+::string}]{filename}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_afd6087490d82489b892a41298eba4e60}
+This function loads the dictionary into a linked list it takes the filename \char`\"{}cities\char`\"{} and loads that as cities the variable Then it uses the insert function to create the list after the head pointer. Then at the end it returns head so that we can use it in other functions. 
+\begin{DoxyCode}
+10 \{
+11     \hyperlink{structNODE}{NODE}* head = 0; \textcolor{comment}{// this is where we declare the head as null to create the list}
+12     std::ifstream ifs(filename.c\_str());
+13     \textcolor{keywordtype}{string} city;
+14     \textcolor{keywordflow}{while}(ifs >> city) 
+15         \textcolor{keywordflow}{if}(\hyperlink{insert_8cpp_a578b73f866dc4391d05ca0219f892495}{insert}(head,city) == \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED})
+16          cerr << \textcolor{stringliteral}{"error on insert\(\backslash\)n"};
+17          
+18     \textcolor{keywordflow}{return} head;
+19 \}
+\end{DoxyCode}

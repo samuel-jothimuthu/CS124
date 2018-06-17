@@ -1,0 +1,53 @@
+\hypertarget{lab_8cpp}{\subsection{lab.\+cpp File Reference}
+\label{lab_8cpp}\index{lab.\+cpp@{lab.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for lab.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{lab_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{lab_8cpp_af7642ca5270a9f9fdd7080a99aebe404}{operator$<$$<$} (std\+::ostream \&o, const \hyperlink{structEntry}{Entry} \&e)
+\item 
+std\+::istream \& \hyperlink{lab_8cpp_a66299b41ce03c5ea6e662f1672749fed}{operator$>$$>$} (std\+::istream \&i, \hyperlink{structEntry}{Entry} \&e)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8cpp_af7642ca5270a9f9fdd7080a99aebe404}{\index{lab.\+cpp@{lab.\+cpp}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lab.\+cpp@{lab.\+cpp}}
+\paragraph[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{o, }
+\item[{const {\bf Entry} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8cpp_af7642ca5270a9f9fdd7080a99aebe404}
+This file contains the code for the operator overload. the insertion \char`\"{}$>$$>$\char`\"{} and extraction \char`\"{}$<$$<$\char`\"{} operator is what is overloaded. You can see it the load dictionary function 
+\begin{DoxyCode}
+7 \{
+8     o << e.\hyperlink{structEntry_ae91060385d9c045faed5fa24d81be352}{word} << \textcolor{stringliteral}{"\(\backslash\)t"};
+9     o << e.\hyperlink{structEntry_a5d913292c5db3101b0f903e7bcd21b8d}{translation};
+10     \textcolor{keywordflow}{return} o;
+11 \}
+\end{DoxyCode}
+\hypertarget{lab_8cpp_a66299b41ce03c5ea6e662f1672749fed}{\index{lab.\+cpp@{lab.\+cpp}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lab.\+cpp@{lab.\+cpp}}
+\paragraph[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{i, }
+\item[{{\bf Entry} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8cpp_a66299b41ce03c5ea6e662f1672749fed}
+
+\begin{DoxyCode}
+14 \{
+15     i >> e.\hyperlink{structEntry_ae91060385d9c045faed5fa24d81be352}{word} >> e.\hyperlink{structEntry_a5d913292c5db3101b0f903e7bcd21b8d}{translation};
+16     \textcolor{keywordflow}{return} i;
+17     
+18 \}
+\end{DoxyCode}

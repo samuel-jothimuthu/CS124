@@ -1,0 +1,35 @@
+\hypertarget{readtimes_8cpp}{\subsection{readtimes.\+cpp File Reference}
+\label{readtimes_8cpp}\index{readtimes.\+cpp@{readtimes.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{readtimes_8cpp_abed4d504ddb0a41eff492be7984941f2}{readtimes} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{readtimes_8cpp_abed4d504ddb0a41eff492be7984941f2}{\index{readtimes.\+cpp@{readtimes.\+cpp}!readtimes@{readtimes}}
+\index{readtimes@{readtimes}!readtimes.\+cpp@{readtimes.\+cpp}}
+\paragraph[{readtimes}]{\setlength{\rightskip}{0pt plus 5cm}void readtimes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{readtimes_8cpp_abed4d504ddb0a41eff492be7984941f2}
+
+\begin{DoxyCode}
+3 \{
+4       \textcolor{keywordtype}{string} line;
+5             ifstream inpfile(\textcolor{stringliteral}{"times.txt"});
+6             \textcolor{keywordflow}{if} (inpfile.is\_open())
+7             \{
+8                 \textcolor{keywordflow}{while} (getline (inpfile, line) )
+9                 \{
+10                 cout << line << endl;
+11                 \}
+12             \}
+13         inpfile.close();
+14     
+15 \}
+\end{DoxyCode}

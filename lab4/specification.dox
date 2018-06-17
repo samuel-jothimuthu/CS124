@@ -1,0 +1,76 @@
+/** \page Specification
+This is the Pizza Shop Queue Program. It uses queues which are a data stucture for 
+storing certain elements. It uses a last in first out method like how a normal queue operates.
+Elements are added at the end and removed at the front. This is usefull for a variety of reason namely restaurants; where
+orders are important. 
+
+Features:
+
+1) A user can enter pizzas and have it show up in the queue
+
+2) The queue shows everything in order along with the address.
+
+3) Done witha a GUI so the user has ease of navigation
+
+*/
+
+/** \page Analysis
+When the program runs a window will pop up. This is a good sign that the program is working.
+Then 3 selection criteria will open up. First enter the pizza and then enter the address.
+Then click order wich will ad that pizza into the queue. Then drivers can be entered.
+Once they are entered they begin to fill up the queue. They will then take the pizza and deliver it
+which will remove them from the queue.
+
+*/
+
+/** \page Design
+The Lab is designed using Fltk. This is what makes the GUI. The intention 
+of showing the que on a seperate window was 
+to allow the user to easily see the ques and the drivers and what actions 
+were being taken on the pizzas
+Each file has a specific purpose see the individual slides to understand more. 
+One of the design changes was the timer.
+There was a timer initially added into the program to show the time since launch. 
+However since none of the queue information could be 
+live updated (only updates when something was added or manually changed) I scrapped it since 
+it would cause confusion. For example a pizza takes 
+10 seconds to cook. The pizza would do that but would not update on the GUI 
+until the user entered something new. So it was confusing to
+exepect the GUI to update after 10 seconds. Now after the timer is removed 
+the user can instead click a button which will show them the queue. 
+The timer was largely irelevant to the program since it just counted how long it was running 
+and not how long a pizza was cooking or being delivered. Instead a standard 10 seconds 
+would be allotted to each pizza before the alert to have it deliver was alotted.
+*/
+/** \page Test 
+
+\latexonly
+\includegraphics{../GUI.png}
+
+
+\includegraphics{../emptyQ.png}
+
+
+\includegraphics{../pizza.png}
+
+
+\includegraphics{../delivery.png}
+
+
+\includegraphics{../drivers.png}
+
+
+\includegraphics{../sam.png}
+
+
+\includegraphics{../both.png}
+
+
+\includegraphics{../driverdeliver.png}
+
+
+\endlatexonly
+
+*/
+
+

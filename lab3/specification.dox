@@ -1,0 +1,57 @@
+/** \page Specification
+This is the Stacks Music Program.
+Once this program is executed the music will begin to play.
+It will play the song Yankee Doodle.
+The song repeats itself in a few places as well as overall.
+The user will see the exact notes and duration for which the song is played.
+The music is stored in stacks and will be 
+
+Features:
+
+1) A user can enter another song into the program provided he has the music 
+notation for it
+
+2) The ammount of notes can be shortened because the song can replay parts of itself in "fragments"
+
+3) Delete the stack so everything is done when the program exits. 
+
+*/
+
+/** \page Analysis
+When the program runs the song will immediatly begin to play.
+The user will be gin to see the notes and the duration of each not being played.
+The user will also be able to see the pointers tha controll the fragment replays.
+This is not necessary but I felt that the user would be interested to see if the program is working properly.
+
+*/
+
+/** \page Design
+There are 8 parts to the lab. The most notable are the push and pop functions.
+Those two control everything in the stack. Wer also have the create and destroy
+fucntions, which creat/destroy the stack. We then uses specific functions to play
+the music, play the notes, and read the song. The play notes allow individual notes 
+to be played while play music plays the song as a whole.  
+
+*/
+/** \page Test 
+This test shows that the program functions 
+The image of the code running is only a portion of the whole song.
+The song is much larger than what the picture carried. 
+I also created a chart showing how the stack works.
+It deatails where the pointers are pointing during the playnotes and play fragments.
+This is for part of the song since the song is much longer.
+
+
+
+\latexonly
+\includegraphics{../music.png} width=2in
+
+
+\includegraphics{../fig.png}
+
+\includegraphics{../chart.png}
+\endlatexonly
+
+*/
+
+

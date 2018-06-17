@@ -1,0 +1,235 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$stdlib.\+h$>$}\\*
+{\ttfamily \#include $<$stdio.\+h$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$chrono$>$}\\*
+{\ttfamily \#include $<$ctime$>$}\\*
+{\ttfamily \#include $<$iomanip$>$}\\*
+{\ttfamily \#include $<$sstream$>$}\\*
+{\ttfamily \#include $<$string$>$}\\*
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structAQIData}{A\+Q\+I\+Data}
+\item 
+class \hyperlink{classMERGESORT}{M\+E\+R\+G\+E\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$}
+\item 
+class \hyperlink{classQUICKSORT}{Q\+U\+I\+C\+K\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{lab_8h_afa2b122c9605683c5ad06505f8d3ea0a}{read\+Data} (string f, \hyperlink{structAQIData}{A\+Q\+I\+Data} aqi\mbox{[}$\,$\mbox{]}, int n)
+\item 
+int \hyperlink{lab_8h_af79b062a38e004faf58461580fe91f54}{count\+Rows} (string f)
+\item 
+bool \hyperlink{lab_8h_a85332d2da1084afe152086facbe509a6}{operator$>$=} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_a8cd3ea0aed06a782e5dcf73049c0d4bd}{operator$<$=} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_a8458af03a840c0d3676203c4b02d3bfb}{operator$>$} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{lab_8h_a857de641d401861627c04f6af22db8f9}{operator$<$} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+{\footnotesize template$<$class A\+Q\+I\+Data $>$ }\\void \hyperlink{lab_8h_a0e163943585d0575fba1eb54bf75ae54}{Swap} (\hyperlink{structAQIData}{A\+Q\+I\+Data} \&a, \hyperlink{structAQIData}{A\+Q\+I\+Data} \&b)
+\item 
+{\footnotesize template$<$class A\+Q\+I\+Data $>$ }\\void \hyperlink{lab_8h_a520e61585767c06f36e3afdf0fb70aa5}{Bubble\+Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\item 
+bool \hyperlink{lab_8h_a7a7719446a70a6db5d33348671d0e8c5}{addtimes} (string filename, string inputstring)
+\item 
+void \hyperlink{lab_8h_abed4d504ddb0a41eff492be7984941f2}{readtimes} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_a7a7719446a70a6db5d33348671d0e8c5}{\index{lab.\+h@{lab.\+h}!addtimes@{addtimes}}
+\index{addtimes@{addtimes}!lab.\+h@{lab.\+h}}
+\paragraph[{addtimes}]{\setlength{\rightskip}{0pt plus 5cm}bool addtimes (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{string}]{inputstring}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a7a7719446a70a6db5d33348671d0e8c5}
+
+\begin{DoxyCode}
+3 \{
+4     
+5     ofstream inpfile(filename, ios::app); 
+6     inpfile << inputstring << endl;
+7     inpfile.close();
+8     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+9 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a520e61585767c06f36e3afdf0fb70aa5}{\index{lab.\+h@{lab.\+h}!Bubble\+Sort@{Bubble\+Sort}}
+\index{Bubble\+Sort@{Bubble\+Sort}!lab.\+h@{lab.\+h}}
+\paragraph[{Bubble\+Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data $>$ void Bubble\+Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a520e61585767c06f36e3afdf0fb70aa5}
+
+\begin{DoxyCode}
+55 \{
+56     \textcolor{keywordtype}{int} i, disorder = n;
+57     
+58     \textcolor{keywordflow}{while} (disorder) \{
+59        
+60         disorder = 0;
+61         
+62         \textcolor{keywordflow}{for} (i = 1; i < n; i++) \{
+63             \textcolor{keywordflow}{if} (a[i] < a[i-1]) \{
+64                 
+65                 \hyperlink{SOMETYPE_8hpp_a0e163943585d0575fba1eb54bf75ae54}{Swap}(a[i], a[i-1]);
+66                 disorder++;
+67                 
+68             \}
+69         \}
+70         n--;
+71     \}
+72 \}    
+\end{DoxyCode}
+\hypertarget{lab_8h_af79b062a38e004faf58461580fe91f54}{\index{lab.\+h@{lab.\+h}!count\+Rows@{count\+Rows}}
+\index{count\+Rows@{count\+Rows}!lab.\+h@{lab.\+h}}
+\paragraph[{count\+Rows}]{\setlength{\rightskip}{0pt plus 5cm}int count\+Rows (
+\begin{DoxyParamCaption}
+\item[{string}]{f}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_af79b062a38e004faf58461580fe91f54}
+
+\begin{DoxyCode}
+3 \{
+4     std::ifstream ifs(f.c\_str());
+5     \textcolor{keywordtype}{int} n = 0;
+6     \textcolor{keywordtype}{string} s;
+7     \textcolor{keywordflow}{while}(getline(ifs,s)) n++;
+8     
+9     
+10     \textcolor{keywordflow}{return} n;
+11 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a857de641d401861627c04f6af22db8f9}{\index{lab.\+h@{lab.\+h}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a857de641d401861627c04f6af22db8f9}
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} < rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+26 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a8cd3ea0aed06a782e5dcf73049c0d4bd}{\index{lab.\+h@{lab.\+h}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a8cd3ea0aed06a782e5dcf73049c0d4bd}
+
+\begin{DoxyCode}
+14 \{
+15     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} <= rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+16 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a8458af03a840c0d3676203c4b02d3bfb}{\index{lab.\+h@{lab.\+h}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a8458af03a840c0d3676203c4b02d3bfb}
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} > rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+21 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a85332d2da1084afe152086facbe509a6}{\index{lab.\+h@{lab.\+h}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a85332d2da1084afe152086facbe509a6}
+This is the operator overloading pages I overloaded the $>$, $<$, $>$=, and $<$= operators This was done so I could compare the A\+Q\+I values specifically to one another without having to chang the authors code 
+\begin{DoxyCode}
+9 \{
+10     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} >= rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+11 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_afa2b122c9605683c5ad06505f8d3ea0a}{\index{lab.\+h@{lab.\+h}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!lab.\+h@{lab.\+h}}
+\paragraph[{read\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Data (
+\begin{DoxyParamCaption}
+\item[{string}]{f, }
+\item[{{\bf A\+Q\+I\+Data}}]{aqi\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_afa2b122c9605683c5ad06505f8d3ea0a}
+
+\begin{DoxyCode}
+10 \{
+11     ifstream ifs (f.c\_str());
+12     \textcolor{keywordtype}{string} s; \textcolor{keywordtype}{char} comma = \textcolor{charliteral}{','};
+13     getline(ifs,s);
+14     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < n ; i++) \{
+15     getline(ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read and ignore the state}
+16     getline(ifs, aqi[i].county, \textcolor{charliteral}{','});
+17     getline(ifs,s,\textcolor{charliteral}{','});
+18     getline(ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read and ignore state}
+19     getline (ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read amd ind ignore the Days of AQI}
+20     ifs >>  aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} >> comma;
+21     getline(ifs,s);
+22 \}
+23     ifs.close();
+24 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_abed4d504ddb0a41eff492be7984941f2}{\index{lab.\+h@{lab.\+h}!readtimes@{readtimes}}
+\index{readtimes@{readtimes}!lab.\+h@{lab.\+h}}
+\paragraph[{readtimes}]{\setlength{\rightskip}{0pt plus 5cm}void readtimes (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_abed4d504ddb0a41eff492be7984941f2}
+
+\begin{DoxyCode}
+3 \{
+4       \textcolor{keywordtype}{string} line;
+5             ifstream inpfile(\textcolor{stringliteral}{"times.txt"});
+6             \textcolor{keywordflow}{if} (inpfile.is\_open())
+7             \{
+8                 \textcolor{keywordflow}{while} (getline (inpfile, line) )
+9                 \{
+10                 cout << line << endl;
+11                 \}
+12             \}
+13         inpfile.close();
+14     
+15 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a0e163943585d0575fba1eb54bf75ae54}{\index{lab.\+h@{lab.\+h}!Swap@{Swap}}
+\index{Swap@{Swap}!lab.\+h@{lab.\+h}}
+\paragraph[{Swap}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data $>$ void Swap (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data} \&}]{a, }
+\item[{{\bf A\+Q\+I\+Data} \&}]{b}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a0e163943585d0575fba1eb54bf75ae54}
+
+\begin{DoxyCode}
+4 \{
+5     \hyperlink{structAQIData}{AQIData} temp = a; 
+6     a = b;
+7     b = temp;
+8 \}
+\end{DoxyCode}

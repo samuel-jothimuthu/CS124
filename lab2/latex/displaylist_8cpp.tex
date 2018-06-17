@@ -1,0 +1,43 @@
+\hypertarget{displaylist_8cpp}{\subsection{displaylist.\+cpp File Reference}
+\label{displaylist_8cpp}\index{displaylist.\+cpp@{displaylist.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for displaylist.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{displaylist_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}{displaylist} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}{\index{displaylist.\+cpp@{displaylist.\+cpp}!displaylist@{displaylist}}
+\index{displaylist@{displaylist}!displaylist.\+cpp@{displaylist.\+cpp}}
+\paragraph[{displaylist}]{\setlength{\rightskip}{0pt plus 5cm}void displaylist (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head} & This fucntion only takes a pointer as an argument.\\
+\hline
+\end{DoxyParams}
+This function displays/traverses the list This is what a linked list looks like to a user It traverses the list without manipulating any pointers. See the comments for further deatils 
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//first we set the node pointer equal to the head pointer}
+13     \textcolor{comment}{//Then while node exists this loop continues}
+14     \textcolor{comment}{//Then we set the pointer equal to the next pointer }
+15 
+16     \textcolor{keywordflow}{for}(\hyperlink{structNODE}{NODE}* node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+17     \textcolor{comment}{//This displays the data within the node}
+18     cout << node->city << endl;
+19 \}
+\end{DoxyCode}

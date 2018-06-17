@@ -1,0 +1,49 @@
+\hypertarget{show_8cpp}{\subsection{show.\+cpp File Reference}
+\label{show_8cpp}\index{show.\+cpp@{show.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for show.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{show_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{show_8cpp_a56ac87e7157d59fc25975adae5b10cb6}{show\+Q} (Fl\+\_\+\+Callback $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{show_8cpp_a56ac87e7157d59fc25975adae5b10cb6}{\index{show.\+cpp@{show.\+cpp}!show\+Q@{show\+Q}}
+\index{show\+Q@{show\+Q}!show.\+cpp@{show.\+cpp}}
+\paragraph[{show\+Q}]{\setlength{\rightskip}{0pt plus 5cm}void show\+Q (
+\begin{DoxyParamCaption}
+\item[{Fl\+\_\+\+Callback $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{show_8cpp_a56ac87e7157d59fc25975adae5b10cb6}
+This function shows the the queues when the user presses Track order in the G\+U\+I. This function shows the addresses and the pizza as well as the drivers that are available. 
+\begin{DoxyCode}
+8 \{
+9     \textcolor{keywordtype}{string} orderlist;
+10     \textcolor{keywordtype}{string} driverlist;
+11     
+12     \textcolor{keyword}{static} Fl\_Cairo\_Window trackWindow(200, 200); \textcolor{comment}{//Build the window}
+13     trackWindow.label(\textcolor{stringliteral}{"Tracking Orders"});
+14     \textcolor{keyword}{static} Fl\_Text\_Buffer \hyperlink{lab_8h_aea2b8efadc87a819fe57c311d668e504}{buff};
+15     \textcolor{keyword}{static} Fl\_Text\_Display OrderQ(0,0, 200,200, \textcolor{stringliteral}{"Track Order:"});
+16     OrderQ.buffer(&buff);
+17     
+18     \textcolor{keywordtype}{string} o = \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_ac2b49f6579d59d4de02c17f456aa6f5e}{traverse}(\hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}); \textcolor{comment}{//using the traverse fucntion to
+       creat the list}
+19     \textcolor{keywordtype}{string} d = \hyperlink{lab_8h_a3dc8498494666cf6c70359b55fe9202c}{drivers}.\hyperlink{classRBQUEUE_ae554aac84a4435a51a5d0029050c30e3}{traverse}();
+20     o+=d;\textcolor{comment}{//This creates the list of Orders and Drivers}
+21     
+22     buff.text(o.c\_str());
+23     trackWindow.add(OrderQ);
+24     trackWindow.show(); \textcolor{comment}{//Displays the window}
+25 \}
+\end{DoxyCode}

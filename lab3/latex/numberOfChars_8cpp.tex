@@ -1,0 +1,37 @@
+\hypertarget{numberOfChars_8cpp}{\subsection{number\+Of\+Chars.\+cpp File Reference}
+\label{numberOfChars_8cpp}\index{number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for number\+Of\+Chars.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{numberOfChars_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{numberOfChars_8cpp_abc8df280a4f34fc23a2dd8b1b4a6cc41}{numberofchars} (std\+::ifstream \&f)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{numberOfChars_8cpp_abc8df280a4f34fc23a2dd8b1b4a6cc41}{\index{number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}!numberofchars@{numberofchars}}
+\index{numberofchars@{numberofchars}!number\+Of\+Chars.\+cpp@{number\+Of\+Chars.\+cpp}}
+\paragraph[{numberofchars}]{\setlength{\rightskip}{0pt plus 5cm}int numberofchars (
+\begin{DoxyParamCaption}
+\item[{std\+::ifstream \&}]{f}
+\end{DoxyParamCaption}
+)}}\label{numberOfChars_8cpp_abc8df280a4f34fc23a2dd8b1b4a6cc41}
+This program counts the number of chareters in the abc notion 
+\begin{DoxyCode}
+6 \{
+7     \textcolor{keywordtype}{int} n = 0;
+8     \textcolor{comment}{//count characters}
+9     \textcolor{keywordtype}{char} c;
+10     \textcolor{keywordflow}{while}(f >> c)
+11         n++;
+12     \textcolor{keywordflow}{return} n;
+13 \}
+\end{DoxyCode}

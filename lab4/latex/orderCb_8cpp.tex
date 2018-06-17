@@ -1,0 +1,36 @@
+\hypertarget{orderCb_8cpp}{\subsection{order\+Cb.\+cpp File Reference}
+\label{orderCb_8cpp}\index{order\+Cb.\+cpp@{order\+Cb.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for order\+Cb.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{orderCb_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{orderCb_8cpp_a570630cd6fb8ae1147a712668f813b9b}{order\+Cb} (Fl\+\_\+\+Callback $\ast$, void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{orderCb_8cpp_a570630cd6fb8ae1147a712668f813b9b}{\index{order\+Cb.\+cpp@{order\+Cb.\+cpp}!order\+Cb@{order\+Cb}}
+\index{order\+Cb@{order\+Cb}!order\+Cb.\+cpp@{order\+Cb.\+cpp}}
+\paragraph[{order\+Cb}]{\setlength{\rightskip}{0pt plus 5cm}void order\+Cb (
+\begin{DoxyParamCaption}
+\item[{Fl\+\_\+\+Callback $\ast$}]{, }
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{orderCb_8cpp_a570630cd6fb8ae1147a712668f813b9b}
+This the the order fucntion. This adds the ordered elements into the list. 
+\begin{DoxyCode}
+7 \{
+8     \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a6b9ce0a29de13c2c2f1721627dba4812}{address} = \hyperlink{lab_8h_a0ce7586472726848924b4964b80e69ba}{address}->value();
+9     \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items} = \hyperlink{lab_8h_abf805c82a90897837d1c26ef915f1cd6}{pizza}->value();
+10     \hyperlink{lab_8h_af9cad0e28281b8add71f55142323def6}{pendingOrder}.\hyperlink{classLLQUEUE_a2d53817739f7c273a3c0f14f7804c065}{Insert}(\hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}); \textcolor{comment}{//Where the data is inserted}
+11     
+12 \}
+\end{DoxyCode}

@@ -1,0 +1,99 @@
+\hypertarget{window_8cpp}{\subsection{window.\+cpp File Reference}
+\label{window_8cpp}\index{window.\+cpp@{window.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for window.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{window_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+Fl\+\_\+\+Cairo\+\_\+\+Window $\ast$ \hyperlink{window_8cpp_af7bd238954bf4d2d0f780d4d80eaf2b2}{window} ()
+\end{DoxyCompactItemize}
+\subsubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+Fl\+\_\+\+Cairo\+\_\+\+Window $\ast$ \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{pizza}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{window_8cpp_a0ce7586472726848924b4964b80e69ba}{address}
+\item 
+Fl\+\_\+\+Input $\ast$ \hyperlink{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{Driver}
+\item 
+Fl\+\_\+\+Button $\ast$ \hyperlink{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{Order}
+\item 
+Fl\+\_\+\+Button $\ast$ \hyperlink{window_8cpp_a6737b513e36303ae81b9f65206239dec}{driver}
+\item 
+Fl\+\_\+\+Button $\ast$ \hyperlink{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{tracker}
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{window_8cpp_af7bd238954bf4d2d0f780d4d80eaf2b2}{\index{window.\+cpp@{window.\+cpp}!window@{window}}
+\index{window@{window}!window.\+cpp@{window.\+cpp}}
+\paragraph[{window}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Cairo\+\_\+\+Window$\ast$ window (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{window_8cpp_af7bd238954bf4d2d0f780d4d80eaf2b2}
+
+\begin{DoxyCode}
+18 \{
+19     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw} = \textcolor{keyword}{new} Fl\_Cairo\_Window(\hyperlink{lab_8h_a66326676d44c838441a4dc39c85f599b}{w},\hyperlink{lab_8h_a3f40fea9b1040e381f08ddd4b026765d}{h});
+20     
+21     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw}->label(\textcolor{stringliteral}{"Pizza Delivery Services"});
+22     
+23     \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw}->color(FL\_GRAY);
+24     
+25     \hyperlink{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{Order} = \textcolor{keyword}{new} Fl\_Button(200,40,70,20,\textcolor{stringliteral}{"Order"});
+26     \hyperlink{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{Order}->callback((Fl\_Callback*)\hyperlink{lab_8h_a14029123842f0c00bf955eaeea529b17}{orderCb});
+27     
+28     \hyperlink{window_8cpp_a6737b513e36303ae81b9f65206239dec}{driver} = \textcolor{keyword}{new} Fl\_Button(200,90,70,20,\textcolor{stringliteral}{"Driver"});
+29     \hyperlink{window_8cpp_a6737b513e36303ae81b9f65206239dec}{driver}->callback((Fl\_Callback*)\hyperlink{driverCb_8cpp_a9c6487e79c76ee9ad1efcb3e0e91ad93}{driverCb});
+30     
+31     \hyperlink{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{tracker} = \textcolor{keyword}{new} Fl\_Button (150,130,90,30,\textcolor{stringliteral}{"Track Order"});
+32     \hyperlink{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{tracker}->callback((Fl\_Callback*)\hyperlink{lab_8h_a56ac87e7157d59fc25975adae5b10cb6}{showQ});
+33     
+34     \hyperlink{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{pizza} = \textcolor{keyword}{new} Fl\_Input(80,20,100,20,\textcolor{stringliteral}{"Pizza: "});
+35     \hyperlink{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{pizza} -> color(FL\_WHITE);
+36     
+37     \hyperlink{window_8cpp_a0ce7586472726848924b4964b80e69ba}{address} = \textcolor{keyword}{new} Fl\_Input(80,40,100,20, \textcolor{stringliteral}{"Address: "});
+38     \hyperlink{window_8cpp_a0ce7586472726848924b4964b80e69ba}{address}-> color(FL\_WHITE);
+39     
+40     \hyperlink{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{Driver} = \textcolor{keyword}{new} Fl\_Input(80,80,100,20, \textcolor{stringliteral}{"Driver: "});
+41     \hyperlink{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{Driver}-> color(FL\_WHITE);
+42     
+43     \textcolor{keywordflow}{return} \hyperlink{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{cw};
+44     
+45     
+46 \}
+\end{DoxyCode}
+
+
+\subsubsection{Variable Documentation}
+\hypertarget{window_8cpp_a0ce7586472726848924b4964b80e69ba}{\index{window.\+cpp@{window.\+cpp}!address@{address}}
+\index{address@{address}!window.\+cpp@{window.\+cpp}}
+\paragraph[{address}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ address}}\label{window_8cpp_a0ce7586472726848924b4964b80e69ba}
+\hypertarget{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}{\index{window.\+cpp@{window.\+cpp}!cw@{cw}}
+\index{cw@{cw}!window.\+cpp@{window.\+cpp}}
+\paragraph[{cw}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Cairo\+\_\+\+Window$\ast$ cw}}\label{window_8cpp_a5fe2ac8fad8e5bd201410fafd75eae23}
+This function is special because it creates the G\+U\+I window. This was takign up too much space in the main function so I split most of into here. I create three buttons and three text inputs. This is to enter the pizza and the drivers as well as show the queues. \hypertarget{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}{\index{window.\+cpp@{window.\+cpp}!Driver@{Driver}}
+\index{Driver@{Driver}!window.\+cpp@{window.\+cpp}}
+\paragraph[{Driver}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ Driver}}\label{window_8cpp_ac3a31ef741b6d40c85fd634017661a38}
+\hypertarget{window_8cpp_a6737b513e36303ae81b9f65206239dec}{\index{window.\+cpp@{window.\+cpp}!driver@{driver}}
+\index{driver@{driver}!window.\+cpp@{window.\+cpp}}
+\paragraph[{driver}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Button$\ast$ driver}}\label{window_8cpp_a6737b513e36303ae81b9f65206239dec}
+\hypertarget{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}{\index{window.\+cpp@{window.\+cpp}!Order@{Order}}
+\index{Order@{Order}!window.\+cpp@{window.\+cpp}}
+\paragraph[{Order}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Button$\ast$ Order}}\label{window_8cpp_af7bb2b2233230b6a112892f626be3a2d}
+\hypertarget{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}{\index{window.\+cpp@{window.\+cpp}!pizza@{pizza}}
+\index{pizza@{pizza}!window.\+cpp@{window.\+cpp}}
+\paragraph[{pizza}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Input$\ast$ pizza}}\label{window_8cpp_abf805c82a90897837d1c26ef915f1cd6}
+\hypertarget{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}{\index{window.\+cpp@{window.\+cpp}!tracker@{tracker}}
+\index{tracker@{tracker}!window.\+cpp@{window.\+cpp}}
+\paragraph[{tracker}]{\setlength{\rightskip}{0pt plus 5cm}Fl\+\_\+\+Button$\ast$ tracker}}\label{window_8cpp_a9cae10bde8006c09e5a662d92cb81999}

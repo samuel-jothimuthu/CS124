@@ -1,0 +1,136 @@
+\hypertarget{classRBQUEUE}{\subsection{R\+B\+Q\+U\+E\+U\+E Class Reference}
+\label{classRBQUEUE}\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+}
+
+
+{\ttfamily \#include $<$lab.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classRBQUEUE_a7e58de52e8ee8cb73332477746cd4a99}{R\+B\+Q\+U\+E\+U\+E} ()
+\item 
+\hyperlink{classRBQUEUE_a4216cbcdbbf756fb92e2554923c8f9fc}{$\sim$\+R\+B\+Q\+U\+E\+U\+E} ()
+\item 
+bool \hyperlink{classRBQUEUE_ae4dc0a33bf4c567cff863d5f822a6589}{Insert} (string s)
+\item 
+bool \hyperlink{classRBQUEUE_a53ab97610e4b96c9548d2ffe38108631}{Remove} (string \&s)
+\item 
+bool \hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{is\+Empty} ()
+\item 
+bool \hyperlink{classRBQUEUE_ae8a4143bab8b1d41b0b3d2102ca2acbf}{is\+Full} ()
+\item 
+string \hyperlink{classRBQUEUE_ae554aac84a4435a51a5d0029050c30e3}{traverse} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\hypertarget{classRBQUEUE_a7e58de52e8ee8cb73332477746cd4a99}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{R\+B\+Q\+U\+E\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}R\+B\+Q\+U\+E\+U\+E\+::\+R\+B\+Q\+U\+E\+U\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRBQUEUE_a7e58de52e8ee8cb73332477746cd4a99}
+
+\begin{DoxyCode}
+73 \{front = rear = 0;\}
+\end{DoxyCode}
+\hypertarget{classRBQUEUE_a4216cbcdbbf756fb92e2554923c8f9fc}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!````~R\+B\+Q\+U\+E\+U\+E@{$\sim$\+R\+B\+Q\+U\+E\+U\+E}}
+\index{````~R\+B\+Q\+U\+E\+U\+E@{$\sim$\+R\+B\+Q\+U\+E\+U\+E}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{$\sim$\+R\+B\+Q\+U\+E\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}R\+B\+Q\+U\+E\+U\+E\+::$\sim$\+R\+B\+Q\+U\+E\+U\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRBQUEUE_a4216cbcdbbf756fb92e2554923c8f9fc}
+
+\begin{DoxyCode}
+74 \{\}
+\end{DoxyCode}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classRBQUEUE_ae4dc0a33bf4c567cff863d5f822a6589}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!Insert@{Insert}}
+\index{Insert@{Insert}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+B\+Q\+U\+E\+U\+E\+::\+Insert (
+\begin{DoxyParamCaption}
+\item[{string}]{s}
+\end{DoxyParamCaption}
+)}}\label{classRBQUEUE_ae4dc0a33bf4c567cff863d5f822a6589}
+
+\begin{DoxyCode}
+5 \{
+6     \textcolor{keywordflow}{if} (\hyperlink{classRBQUEUE_ae8a4143bab8b1d41b0b3d2102ca2acbf}{isFull}()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+7     buf[rear] = s;
+8     rear = nextIndex(rear);
+9     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+10     cout << \textcolor{stringliteral}{"insert "} << s; 
+11 \}
+\end{DoxyCode}
+\hypertarget{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+B\+Q\+U\+E\+U\+E\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRBQUEUE_a3a97717d7831d8489981beceafac4122}
+
+\begin{DoxyCode}
+77 \{\textcolor{keywordflow}{return} (front == rear); \}
+\end{DoxyCode}
+\hypertarget{classRBQUEUE_ae8a4143bab8b1d41b0b3d2102ca2acbf}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!is\+Full@{is\+Full}}
+\index{is\+Full@{is\+Full}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{is\+Full}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+B\+Q\+U\+E\+U\+E\+::is\+Full (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classRBQUEUE_ae8a4143bab8b1d41b0b3d2102ca2acbf}
+
+\begin{DoxyCode}
+78 \{\textcolor{keywordflow}{return} (nextIndex(rear) == front);\}
+\end{DoxyCode}
+\hypertarget{classRBQUEUE_a53ab97610e4b96c9548d2ffe38108631}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!Remove@{Remove}}
+\index{Remove@{Remove}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}bool R\+B\+Q\+U\+E\+U\+E\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{string \&}]{s}
+\end{DoxyParamCaption}
+)}}\label{classRBQUEUE_a53ab97610e4b96c9548d2ffe38108631}
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keywordflow}{if} (\hyperlink{classRBQUEUE_a3a97717d7831d8489981beceafac4122}{isEmpty}()) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+6     s = buf[front];
+7     front = nextIndex(front);
+8     cout << \textcolor{stringliteral}{"remove "} << s; 
+9     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+10     
+11 \}
+\end{DoxyCode}
+\hypertarget{classRBQUEUE_ae554aac84a4435a51a5d0029050c30e3}{\index{R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}!traverse@{traverse}}
+\index{traverse@{traverse}!R\+B\+Q\+U\+E\+U\+E@{R\+B\+Q\+U\+E\+U\+E}}
+\paragraph[{traverse}]{\setlength{\rightskip}{0pt plus 5cm}string R\+B\+Q\+U\+E\+U\+E\+::traverse (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{classRBQUEUE_ae554aac84a4435a51a5d0029050c30e3}
+
+\begin{DoxyCode}
+3 \{
+4     \textcolor{keywordtype}{string} list = \textcolor{stringliteral}{"\(\backslash\)n\(\backslash\)nDrivers: \(\backslash\)n"};
+5     \textcolor{keywordflow}{for} (\textcolor{keywordtype}{int} i = front; i!=rear; i++)
+6     \{
+7         list += buf[i];
+8         list += \textcolor{stringliteral}{"\(\backslash\)n"};
+9     \}
+10     \textcolor{keywordflow}{return} list;
+11 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h}{lab.\+h}\item 
+\hyperlink{RBinsert_8cpp}{R\+Binsert.\+cpp}\item 
+\hyperlink{RBremove_8cpp}{R\+Bremove.\+cpp}\item 
+\hyperlink{RBtraverse_8cpp}{R\+Btraverse.\+cpp}\end{DoxyCompactItemize}

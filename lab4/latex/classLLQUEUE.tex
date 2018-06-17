@@ -1,0 +1,156 @@
+\hypertarget{classLLQUEUE}{\subsection{L\+L\+Q\+U\+E\+U\+E Class Reference}
+\label{classLLQUEUE}\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+}
+
+
+{\ttfamily \#include $<$lab.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classLLQUEUE_a228f05ff67aeb119b3bfbe0bbb194b20}{L\+L\+Q\+U\+E\+U\+E} ()
+\item 
+\hyperlink{classLLQUEUE_a2ae375ef2a7ee584da27b7aa5ef0b4e8}{$\sim$\+L\+L\+Q\+U\+E\+U\+E} ()
+\item 
+bool \hyperlink{classLLQUEUE_a2d53817739f7c273a3c0f14f7804c065}{Insert} (\hyperlink{structORDER}{O\+R\+D\+E\+R} \&info)
+\item 
+bool \hyperlink{classLLQUEUE_ab8d52943d24188adf0855a0ee9fa0afe}{Remove} (\hyperlink{structORDER}{O\+R\+D\+E\+R} \&info)
+\item 
+bool \hyperlink{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{is\+Empty} ()
+\item 
+string \hyperlink{classLLQUEUE_ac2b49f6579d59d4de02c17f456aa6f5e}{traverse} (\hyperlink{structORDER}{O\+R\+D\+E\+R} \&info)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Constructor \& Destructor Documentation}
+\hypertarget{classLLQUEUE_a228f05ff67aeb119b3bfbe0bbb194b20}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{L\+L\+Q\+U\+E\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}L\+L\+Q\+U\+E\+U\+E\+::\+L\+L\+Q\+U\+E\+U\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classLLQUEUE_a228f05ff67aeb119b3bfbe0bbb194b20}
+
+\begin{DoxyCode}
+47 \{front = rear = 0;\} \textcolor{comment}{//Initialize the pointers to null}
+\end{DoxyCode}
+\hypertarget{classLLQUEUE_a2ae375ef2a7ee584da27b7aa5ef0b4e8}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!````~L\+L\+Q\+U\+E\+U\+E@{$\sim$\+L\+L\+Q\+U\+E\+U\+E}}
+\index{````~L\+L\+Q\+U\+E\+U\+E@{$\sim$\+L\+L\+Q\+U\+E\+U\+E}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{$\sim$\+L\+L\+Q\+U\+E\+U\+E}]{\setlength{\rightskip}{0pt plus 5cm}L\+L\+Q\+U\+E\+U\+E\+::$\sim$\+L\+L\+Q\+U\+E\+U\+E (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classLLQUEUE_a2ae375ef2a7ee584da27b7aa5ef0b4e8}
+
+\begin{DoxyCode}
+48                    \{ \textcolor{comment}{//destructor (default)}
+49             \hyperlink{structNODE}{NODE} *next;
+50             
+51             \textcolor{keywordflow}{while} (front) \{
+52                 next = front->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+53                 \textcolor{keyword}{delete} front;
+54                 front = next;
+55                 \}
+56             \} 
+\end{DoxyCode}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classLLQUEUE_a2d53817739f7c273a3c0f14f7804c065}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!Insert@{Insert}}
+\index{Insert@{Insert}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{Insert}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+L\+Q\+U\+E\+U\+E\+::\+Insert (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+R\+D\+E\+R} \&}]{info}
+\end{DoxyParamCaption}
+)}}\label{classLLQUEUE_a2d53817739f7c273a3c0f14f7804c065}
+
+\begin{DoxyCode}
+4 \{
+5     \hyperlink{structNODE}{NODE} *newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+6     
+7     \textcolor{keywordflow}{if}(!newnode)
+8         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+9         
+10     newnode->\hyperlink{structNODE_a8ae24fb8df6ea326ce23cab9331efdd6}{info}=info;
+11     
+12     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next}=0;
+13     
+14     \textcolor{keywordflow}{if}(rear == 0)
+15         front = rear = newnode;
+16     \textcolor{keywordflow}{else} \{
+17         rear->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode;
+18         rear = newnode;
+19     \}
+20     cout << \textcolor{stringliteral}{"insert "} << \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}; 
+21     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+22 \}
+\end{DoxyCode}
+\hypertarget{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!is\+Empty@{is\+Empty}}
+\index{is\+Empty@{is\+Empty}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{is\+Empty}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+L\+Q\+U\+E\+U\+E\+::is\+Empty (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}}\label{classLLQUEUE_acf5810657663dfbb5ac62407bd78950c}
+
+\begin{DoxyCode}
+59 \{\textcolor{keywordflow}{return} (front == 0);\}
+\end{DoxyCode}
+\hypertarget{classLLQUEUE_ab8d52943d24188adf0855a0ee9fa0afe}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!Remove@{Remove}}
+\index{Remove@{Remove}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{Remove}]{\setlength{\rightskip}{0pt plus 5cm}bool L\+L\+Q\+U\+E\+U\+E\+::\+Remove (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+R\+D\+E\+R} \&}]{info}
+\end{DoxyParamCaption}
+)}}\label{classLLQUEUE_ab8d52943d24188adf0855a0ee9fa0afe}
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keywordflow}{if} (front == 0)
+6         \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+7     \textcolor{comment}{//Get the first element out of the que}
+8     info = front -> info;
+9     
+10     \textcolor{comment}{//Remove the node from the front of the queue}
+11     \hyperlink{structNODE}{NODE} *next = front -> next;
+12     
+13     \textcolor{keyword}{delete} front;
+14     front = next;
+15     \textcolor{keywordflow}{if} (front == 0) \textcolor{comment}{//if the last element was removed}
+16         rear = 0;
+17     
+18     cout << \textcolor{stringliteral}{"remove "} << \hyperlink{lab_8h_a9b6b9e3013897906bcd799b34de83de3}{order}.\hyperlink{structORDER_a244508e0d34d5da2b9ff18a5e02cbcf9}{items}; 
+19     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+20 \}
+\end{DoxyCode}
+\hypertarget{classLLQUEUE_ac2b49f6579d59d4de02c17f456aa6f5e}{\index{L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}!traverse@{traverse}}
+\index{traverse@{traverse}!L\+L\+Q\+U\+E\+U\+E@{L\+L\+Q\+U\+E\+U\+E}}
+\paragraph[{traverse}]{\setlength{\rightskip}{0pt plus 5cm}string L\+L\+Q\+U\+E\+U\+E\+::traverse (
+\begin{DoxyParamCaption}
+\item[{{\bf O\+R\+D\+E\+R} \&}]{info}
+\end{DoxyParamCaption}
+)}}\label{classLLQUEUE_ac2b49f6579d59d4de02c17f456aa6f5e}
+This is the code to traverse the queues an build a list that can be put into the G\+U\+I. This function returns the list. A key note is that it is type string so that we can call it and use the return value. 
+\begin{DoxyCode}
+10 \{
+11     \textcolor{keywordtype}{string} list = \textcolor{stringliteral}{"Address and Order: \(\backslash\)n"};
+12     \textcolor{keywordflow}{for}(\hyperlink{structNODE}{NODE} *p = front; p; p = p->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+13     \{
+14         list+=p->info.address; \textcolor{comment}{//}
+15         list+=\textcolor{stringliteral}{" ordered "};
+16         list+= p->info.items;
+17         list+= \textcolor{stringliteral}{"\(\backslash\)n"};
+18         
+19     \}
+20     \textcolor{keywordflow}{return} list;
+21     
+22 \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h}{lab.\+h}\item 
+\hyperlink{insert_8cpp}{insert.\+cpp}\item 
+\hyperlink{remove_8cpp}{remove.\+cpp}\item 
+\hyperlink{traverse_8cpp}{traverse.\+cpp}\end{DoxyCompactItemize}

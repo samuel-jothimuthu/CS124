@@ -1,0 +1,183 @@
+\hypertarget{lab_8h}{\subsection{lab.\+h File Reference}
+\label{lab_8h}\index{lab.\+h@{lab.\+h}}
+}
+{\ttfamily \#include $<$iostream$>$}\\*
+{\ttfamily \#include $<$fstream$>$}\\*
+{\ttfamily \#include $<$vector$>$}\\*
+Include dependency graph for lab.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{lab_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{lab_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structEntry}{Entry}
+\end{DoxyCompactItemize}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+std\+::ostream \& \hyperlink{lab_8h_af7642ca5270a9f9fdd7080a99aebe404}{operator$<$$<$} (std\+::ostream \&o, const \hyperlink{structEntry}{Entry} \&e)
+\item 
+std\+::istream \& \hyperlink{lab_8h_a66299b41ce03c5ea6e662f1672749fed}{operator$>$$>$} (std\+::istream \&i, \hyperlink{structEntry}{Entry} \&e)
+\item 
+bool \hyperlink{lab_8h_ac18625e34f66c3bc052e07dfb0d3d219}{loaddictionary} (string filename, vector$<$ \hyperlink{structEntry}{Entry} $>$ \&dict)
+\item 
+bool \hyperlink{lab_8h_ae41eba27837d0aeea84fb5c6824388db}{foundword} (const vector$<$ \hyperlink{structEntry}{Entry} $>$ \&dict, const string \&word, string \&translation)
+\item 
+bool \hyperlink{lab_8h_ab5aa985d3bd8d2b89a2d5f35f38fb868}{addwords} (string filename, string inputstring)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{lab_8h_ab5aa985d3bd8d2b89a2d5f35f38fb868}{\index{lab.\+h@{lab.\+h}!addwords@{addwords}}
+\index{addwords@{addwords}!lab.\+h@{lab.\+h}}
+\paragraph[{addwords}]{\setlength{\rightskip}{0pt plus 5cm}bool addwords (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{string}]{inputstring}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_ab5aa985d3bd8d2b89a2d5f35f38fb868}
+This is the function that adds unknown words the user inputs back into the dictionary 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & the name of the file \\
+\hline
+\mbox{\tt in}  & {\em inputstring} & the new string created by the user and added to the file \\
+\hline
+\mbox{\tt out}  & {\em inputstring} & is now added into the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean to check if the process was successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//string test = "test"; //to test the fucntion worked}
+13     ofstream inpfile(filename, ios::app); \textcolor{comment}{//opens the file to write; to append the information to it}
+14     inpfile << inputstring << endl;
+15     inpfile.close(); \textcolor{comment}{//closes the filestream}
+16     cout << \textcolor{stringliteral}{"word added"} <<endl;
+17     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+18     
+19 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_ae41eba27837d0aeea84fb5c6824388db}{\index{lab.\+h@{lab.\+h}!foundword@{foundword}}
+\index{foundword@{foundword}!lab.\+h@{lab.\+h}}
+\paragraph[{foundword}]{\setlength{\rightskip}{0pt plus 5cm}bool foundword (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Entry} $>$ \&}]{dict, }
+\item[{const string \&}]{word, }
+\item[{string \&}]{translation}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_ae41eba27837d0aeea84fb5c6824388db}
+A boolean function that looks for the word in the the dictionary file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dict} & a reference to the vector Entries \\
+\hline
+\mbox{\tt in}  & {\em word} & a reference to the word in the vector \\
+\hline
+\mbox{\tt in}  & {\em translation} & a reference to the translation in the vector \\
+\hline
+\mbox{\tt out}  & {\em translation} & the translated word can then be output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean value if the function worked successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+13     \textcolor{keywordtype}{int} i, len = dict.size(); \textcolor{comment}{//length of the size of the vector}
+14     
+15     \textcolor{keywordflow}{for}(i = 0; !found && i < len; i++) 
+16     \{
+17         \textcolor{keywordflow}{if} (dict[i].word == word) \{
+18             translation = dict[i].translation; \textcolor{comment}{//this sets the translation in the file to the translation
+       variable allowing to ouput}
+19             found = \textcolor{keyword}{true};
+20         \}
+21     \}
+22     \textcolor{keywordflow}{return} found;
+23 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_ac18625e34f66c3bc052e07dfb0d3d219}{\index{lab.\+h@{lab.\+h}!loaddictionary@{loaddictionary}}
+\index{loaddictionary@{loaddictionary}!lab.\+h@{lab.\+h}}
+\paragraph[{loaddictionary}]{\setlength{\rightskip}{0pt plus 5cm}bool loaddictionary (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{vector$<$ {\bf Entry} $>$ \&}]{dict}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_ac18625e34f66c3bc052e07dfb0d3d219}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & filename of the dictionary \\
+\hline
+\mbox{\tt in}  & {\em dict} & a reference to a vector of Entries \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean that indicates if the file was opened successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+8 \{
+9     
+10     
+11     ifstream inpfile(filename.c\_str()); \textcolor{comment}{//opening file}
+12     \textcolor{keywordflow}{if} (!inpfile) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+13     
+14     
+15     \hyperlink{structEntry}{Entry} e; \textcolor{comment}{// structure e declared}
+16     \textcolor{keywordflow}{while} (inpfile >> e) \{ \textcolor{comment}{//operator overloading done here}
+17         dict.push\_back(e);
+18         inpfile.ignore(80, \textcolor{charliteral}{'\(\backslash\)n'}); \textcolor{comment}{// skip the rest of the line}
+19         
+20     \}
+21     
+22     
+23     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+24 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_af7642ca5270a9f9fdd7080a99aebe404}{\index{lab.\+h@{lab.\+h}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$<$$<$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{std\+::ostream \&}]{o, }
+\item[{const {\bf Entry} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_af7642ca5270a9f9fdd7080a99aebe404}
+This file contains the code for the operator overload. the insertion \char`\"{}$>$$>$\char`\"{} and extraction \char`\"{}$<$$<$\char`\"{} operator is what is overloaded. You can see it the load dictionary function 
+\begin{DoxyCode}
+7 \{
+8     o << e.\hyperlink{structEntry_ae91060385d9c045faed5fa24d81be352}{word} << \textcolor{stringliteral}{"\(\backslash\)t"};
+9     o << e.\hyperlink{structEntry_a5d913292c5db3101b0f903e7bcd21b8d}{translation};
+10     \textcolor{keywordflow}{return} o;
+11 \}
+\end{DoxyCode}
+\hypertarget{lab_8h_a66299b41ce03c5ea6e662f1672749fed}{\index{lab.\+h@{lab.\+h}!operator$>$$>$@{operator$>$$>$}}
+\index{operator$>$$>$@{operator$>$$>$}!lab.\+h@{lab.\+h}}
+\paragraph[{operator$>$$>$}]{\setlength{\rightskip}{0pt plus 5cm}std\+::istream\& operator$>$$>$ (
+\begin{DoxyParamCaption}
+\item[{std\+::istream \&}]{i, }
+\item[{{\bf Entry} \&}]{e}
+\end{DoxyParamCaption}
+)}}\label{lab_8h_a66299b41ce03c5ea6e662f1672749fed}
+
+\begin{DoxyCode}
+14 \{
+15     i >> e.\hyperlink{structEntry_ae91060385d9c045faed5fa24d81be352}{word} >> e.\hyperlink{structEntry_a5d913292c5db3101b0f903e7bcd21b8d}{translation};
+16     \textcolor{keywordflow}{return} i;
+17     
+18 \}
+\end{DoxyCode}

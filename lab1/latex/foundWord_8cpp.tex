@@ -1,0 +1,59 @@
+\hypertarget{foundWord_8cpp}{\subsection{found\+Word.\+cpp File Reference}
+\label{foundWord_8cpp}\index{found\+Word.\+cpp@{found\+Word.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for found\+Word.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{foundWord_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{foundWord_8cpp_ae41eba27837d0aeea84fb5c6824388db}{foundword} (const vector$<$ \hyperlink{structEntry}{Entry} $>$ \&dict, const string \&word, string \&translation)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{foundWord_8cpp_ae41eba27837d0aeea84fb5c6824388db}{\index{found\+Word.\+cpp@{found\+Word.\+cpp}!foundword@{foundword}}
+\index{foundword@{foundword}!found\+Word.\+cpp@{found\+Word.\+cpp}}
+\paragraph[{foundword}]{\setlength{\rightskip}{0pt plus 5cm}bool foundword (
+\begin{DoxyParamCaption}
+\item[{const vector$<$ {\bf Entry} $>$ \&}]{dict, }
+\item[{const string \&}]{word, }
+\item[{string \&}]{translation}
+\end{DoxyParamCaption}
+)}}\label{foundWord_8cpp_ae41eba27837d0aeea84fb5c6824388db}
+A boolean function that looks for the word in the the dictionary file 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em dict} & a reference to the vector Entries \\
+\hline
+\mbox{\tt in}  & {\em word} & a reference to the word in the vector \\
+\hline
+\mbox{\tt in}  & {\em translation} & a reference to the translation in the vector \\
+\hline
+\mbox{\tt out}  & {\em translation} & the translated word can then be output \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean value if the function worked successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{keywordtype}{bool} found = \textcolor{keyword}{false};
+13     \textcolor{keywordtype}{int} i, len = dict.size(); \textcolor{comment}{//length of the size of the vector}
+14     
+15     \textcolor{keywordflow}{for}(i = 0; !found && i < len; i++) 
+16     \{
+17         \textcolor{keywordflow}{if} (dict[i].word == word) \{
+18             translation = dict[i].translation; \textcolor{comment}{//this sets the translation in the file to the translation
+       variable allowing to ouput}
+19             found = \textcolor{keyword}{true};
+20         \}
+21     \}
+22     \textcolor{keywordflow}{return} found;
+23 \}
+\end{DoxyCode}

@@ -1,0 +1,38 @@
+\hypertarget{create_8cpp}{\subsection{create.\+cpp File Reference}
+\label{create_8cpp}\index{create.\+cpp@{create.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for create.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{create_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{create_8cpp_abd657d26045a775f57a837427142cfbd}{Create} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack, int size)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{create_8cpp_abd657d26045a775f57a837427142cfbd}{\index{create.\+cpp@{create.\+cpp}!Create@{Create}}
+\index{Create@{Create}!create.\+cpp@{create.\+cpp}}
+\paragraph[{Create}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Create (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack, }
+\item[{int}]{size}
+\end{DoxyParamCaption}
+)}}\label{create_8cpp_abd657d26045a775f57a837427142cfbd}
+
+\begin{DoxyCode}
+4 \{
+5     stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf} = \textcolor{keyword}{new} \textcolor{keywordtype}{int}[size];
+6     \textcolor{keywordflow}{if} (!stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf})
+7         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+8     stack.\hyperlink{structSTACK_ad10f9d8025122e8c82832d7a34c77e40}{size} = size;
+9     stack.\hyperlink{structSTACK_a1b186cf876dace2f1e30fcbe260cad9a}{sp} = 0;
+10     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+11 \}
+\end{DoxyCode}

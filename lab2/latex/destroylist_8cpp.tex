@@ -1,0 +1,54 @@
+\hypertarget{destroylist_8cpp}{\subsection{destroylist.\+cpp File Reference}
+\label{destroylist_8cpp}\index{destroylist.\+cpp@{destroylist.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for destroylist.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{destroylist_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{destroylist_8cpp_a67a34562a85e577c0921c5d65c22decc}{destroylist} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$head)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{destroylist_8cpp_a67a34562a85e577c0921c5d65c22decc}{\index{destroylist.\+cpp@{destroylist.\+cpp}!destroylist@{destroylist}}
+\index{destroylist@{destroylist}!destroylist.\+cpp@{destroylist.\+cpp}}
+\paragraph[{destroylist}]{\setlength{\rightskip}{0pt plus 5cm}void destroylist (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$}]{head}
+\end{DoxyParamCaption}
+)}}\label{destroylist_8cpp_a67a34562a85e577c0921c5d65c22decc}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head} & This is the only parameter the function takes.\\
+\hline
+\end{DoxyParams}
+This function completely destroys the list.
+
+
+\begin{DoxyImage}
+\includegraphics{destroylist1}
+\caption{Linked List}
+\end{DoxyImage}
+ As you can see that this function points the head at the node and then deletes it severing the tie to the list 
+\begin{DoxyCode}
+14 \{
+15     \hyperlink{structNODE}{NODE}* node;
+16     \textcolor{keywordflow}{for}(node = head; node; node = node->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next})
+17     \{
+18         cout << \textcolor{stringliteral}{"deleting: "}
+19             << node->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} << std::endl;
+20         \hyperlink{structNODE}{NODE}* tmp = head->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+21         \textcolor{keyword}{delete} head;
+22         head = tmp;
+23         
+24     \}
+25     
+26 \}
+\end{DoxyCode}

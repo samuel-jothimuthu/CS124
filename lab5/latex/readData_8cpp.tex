@@ -1,0 +1,39 @@
+\hypertarget{readData_8cpp}{\subsection{read\+Data.\+cpp File Reference}
+\label{readData_8cpp}\index{read\+Data.\+cpp@{read\+Data.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{readData_8cpp_afa2b122c9605683c5ad06505f8d3ea0a}{read\+Data} (string f, \hyperlink{structAQIData}{A\+Q\+I\+Data} aqi\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{readData_8cpp_afa2b122c9605683c5ad06505f8d3ea0a}{\index{read\+Data.\+cpp@{read\+Data.\+cpp}!read\+Data@{read\+Data}}
+\index{read\+Data@{read\+Data}!read\+Data.\+cpp@{read\+Data.\+cpp}}
+\paragraph[{read\+Data}]{\setlength{\rightskip}{0pt plus 5cm}void read\+Data (
+\begin{DoxyParamCaption}
+\item[{string}]{f, }
+\item[{{\bf A\+Q\+I\+Data}}]{aqi\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{readData_8cpp_afa2b122c9605683c5ad06505f8d3ea0a}
+
+\begin{DoxyCode}
+10 \{
+11     ifstream ifs (f.c\_str());
+12     \textcolor{keywordtype}{string} s; \textcolor{keywordtype}{char} comma = \textcolor{charliteral}{','};
+13     getline(ifs,s);
+14     \textcolor{keywordflow}{for}( \textcolor{keywordtype}{int} i = 0; i < n ; i++) \{
+15     getline(ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read and ignore the state}
+16     getline(ifs, aqi[i].county, \textcolor{charliteral}{','});
+17     getline(ifs,s,\textcolor{charliteral}{','});
+18     getline(ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read and ignore state}
+19     getline (ifs,s,\textcolor{charliteral}{','}); \textcolor{comment}{//read amd ind ignore the Days of AQI}
+20     ifs >>  aqi[i].\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} >> comma;
+21     getline(ifs,s);
+22 \}
+23     ifs.close();
+24 \}
+\end{DoxyCode}

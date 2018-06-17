@@ -1,0 +1,68 @@
+\hypertarget{main_8cpp}{\subsection{main.\+cpp File Reference}
+\label{main_8cpp}\index{main.\+cpp@{main.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for main.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{main_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+int \hyperlink{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{main} ()
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}{\index{main.\+cpp@{main.\+cpp}!main@{main}}
+\index{main@{main}!main.\+cpp@{main.\+cpp}}
+\paragraph[{main}]{\setlength{\rightskip}{0pt plus 5cm}int main (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}}\label{main_8cpp_ae66f6b31b5ad750f1fe042a706a4e3d4}
+This is the main function of the program. This function uses functions described in other files to build, display,insert, and destroy the list. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em Nothing} & This program takes no inputs \\
+\hline
+\mbox{\tt out}  & {\em 0} & The program exits succesfully\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyImage}
+\includegraphics[width=4in]{fig1}
+\caption{Linked List}
+\end{DoxyImage}
+ This is what happens when the list is displayed, built or loaded. 
+\begin{DoxyCode}
+13 \{
+14     \hyperlink{structNODE}{NODE}* head = \hyperlink{lab_8h_afd6087490d82489b892a41298eba4e60}{loadlist}(\textcolor{stringliteral}{"cities"});
+15     \hyperlink{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}{displaylist}(head);
+16     
+17     
+18     
+19     \textcolor{keywordflow}{if}(head)
+20     \{
+21         cout << \textcolor{stringliteral}{"\(\backslash\)nInsert in order Sacramento & Newark"} << endl;
+22         \hyperlink{insertinorder_8cpp_abf14767ea6c86eb593d6f87fe77267e7}{insertinorder}(head, \textcolor{stringliteral}{"Sacramento"});
+23         \hyperlink{insertinorder_8cpp_abf14767ea6c86eb593d6f87fe77267e7}{insertinorder}(head, \textcolor{stringliteral}{"Newark"});
+24         \hyperlink{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}{displaylist}(head);
+25         
+26         cout << \textcolor{stringliteral}{"\(\backslash\)nDestroying and rebuilding list"} << endl; 
+27         \hyperlink{destroylist_8cpp_a67a34562a85e577c0921c5d65c22decc}{destroylist}(head);
+28         \hyperlink{buildlistdirectly_8cpp_a9eb7dfa9761b11c255d499765ea70b75}{builddirectly}(head, \textcolor{stringliteral}{"cities"});
+29         
+30         cout << \textcolor{stringliteral}{"\(\backslash\)nInsert Sacramento & Newark"} << endl;
+31         \hyperlink{insert_8cpp_a578b73f866dc4391d05ca0219f892495}{insert}(head, \textcolor{stringliteral}{"Davis"});
+32         \hyperlink{insert_8cpp_a578b73f866dc4391d05ca0219f892495}{insert}(head, \textcolor{stringliteral}{"Newark"});
+33         
+34         \hyperlink{displaylist_8cpp_a6b2cb293574fc5dc8d7a4897cacea16f}{displaylist}(head);
+35         
+36         
+37     \}
+38     \textcolor{keywordflow}{return} 0;
+39 \}
+\end{DoxyCode}

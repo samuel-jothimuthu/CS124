@@ -1,0 +1,54 @@
+\hypertarget{timer_8cpp}{\subsection{timer.\+cpp File Reference}
+\label{timer_8cpp}\index{timer.\+cpp@{timer.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for timer.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{timer_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{timer} (void $\ast$)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{\index{timer.\+cpp@{timer.\+cpp}!timer@{timer}}
+\index{timer@{timer}!timer.\+cpp@{timer.\+cpp}}
+\paragraph[{timer}]{\setlength{\rightskip}{0pt plus 5cm}void timer (
+\begin{DoxyParamCaption}
+\item[{void $\ast$}]{}
+\end{DoxyParamCaption}
+)}}\label{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}
+
+\begin{DoxyCode}
+4 \{
+5     \textcolor{keyword}{static} \textcolor{keywordtype}{int} s = 0;
+6     \textcolor{keyword}{static} \textcolor{keywordtype}{int} m = 0;
+7     \textcolor{keyword}{static} \textcolor{keywordtype}{int} \hyperlink{main_8cpp_a16611451551e3d15916bae723c3f59f7}{h} = 0;
+8     std::ostringstream oss;
+9     ++s;
+10     \textcolor{keywordflow}{if} (s == 59)
+11     \{
+12         s = 0;
+13         ++m;
+14     \}
+15     \textcolor{keywordflow}{if} (m == 59)
+16     \{
+17         m = 0;
+18         ++\hyperlink{main_8cpp_a16611451551e3d15916bae723c3f59f7}{h};
+19     \}
+20     oss << setfill(\textcolor{charliteral}{'0'});
+21     oss << setw(2) << h << \textcolor{stringliteral}{":"} << setw(2) << m << \textcolor{stringliteral}{":"} << setw(2) << s;
+22     
+23     \hyperlink{lab_8h_a05c7f6e86cca5f4d0ebf44d1f5042c37}{watch}->value(oss.str().c\_str());
+24     
+25     \textcolor{comment}{//in Q if(s % 10 == 0);}
+26     
+27     Fl::repeat\_timeout(1, \hyperlink{timer_8cpp_a13ed8751dfa95731ad8930762493b16b}{timer});
+28 \}
+\end{DoxyCode}

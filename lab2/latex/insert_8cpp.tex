@@ -1,0 +1,69 @@
+\hypertarget{insert_8cpp}{\subsection{insert.\+cpp File Reference}
+\label{insert_8cpp}\index{insert.\+cpp@{insert.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for insert.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{insert_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{insert_8cpp_a578b73f866dc4391d05ca0219f892495}{insert} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, std\+::string city)
+\begin{DoxyCompactList}\small\item\em Insert inserts a new node at the beginning of the list. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{insert_8cpp_a578b73f866dc4391d05ca0219f892495}{\index{insert.\+cpp@{insert.\+cpp}!insert@{insert}}
+\index{insert@{insert}!insert.\+cpp@{insert.\+cpp}}
+\paragraph[{insert}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} insert (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{std\+::string}]{city}
+\end{DoxyParamCaption}
+)}}\label{insert_8cpp_a578b73f866dc4391d05ca0219f892495}
+
+
+Insert inserts a new node at the beginning of the list. 
+
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in,out}  & {\em head} & The head of the linked list \\
+\hline
+\mbox{\tt in}  & {\em city} & The data in the node being inserted \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+A S\+T\+A\+T\+U\+S indicating if Insert was successful of not 
+\begin{DoxyImage}
+\includegraphics{insert}
+\caption{Linked List}
+\end{DoxyImage}
+ 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//city = "Dublin"}
+13     \hyperlink{structNODE}{NODE} *newnode;
+14     
+15     \textcolor{comment}{// Allocate a new node:}
+16     
+17     newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+18     \textcolor{keywordflow}{if} (!newnode)
+19         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED}; 
+20     \textcolor{comment}{//copy the info into the new node:}
+21     
+22     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+23     
+24     \textcolor{comment}{//Link the new node to the list:}
+25     
+26     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = head;
+27     head = newnode; 
+28     
+29     \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK}; 
+30 \}
+\end{DoxyCode}

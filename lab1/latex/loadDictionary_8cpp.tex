@@ -1,0 +1,57 @@
+\hypertarget{loadDictionary_8cpp}{\subsection{load\+Dictionary.\+cpp File Reference}
+\label{loadDictionary_8cpp}\index{load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for load\+Dictionary.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{loadDictionary_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{loadDictionary_8cpp_ac18625e34f66c3bc052e07dfb0d3d219}{loaddictionary} (string filename, vector$<$ \hyperlink{structEntry}{Entry} $>$ \&dict)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{loadDictionary_8cpp_ac18625e34f66c3bc052e07dfb0d3d219}{\index{load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}!loaddictionary@{loaddictionary}}
+\index{loaddictionary@{loaddictionary}!load\+Dictionary.\+cpp@{load\+Dictionary.\+cpp}}
+\paragraph[{loaddictionary}]{\setlength{\rightskip}{0pt plus 5cm}bool loaddictionary (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{vector$<$ {\bf Entry} $>$ \&}]{dict}
+\end{DoxyParamCaption}
+)}}\label{loadDictionary_8cpp_ac18625e34f66c3bc052e07dfb0d3d219}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em the} & filename of the dictionary \\
+\hline
+\mbox{\tt in}  & {\em dict} & a reference to a vector of Entries \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean that indicates if the file was opened successfully 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+8 \{
+9     
+10     
+11     ifstream inpfile(filename.c\_str()); \textcolor{comment}{//opening file}
+12     \textcolor{keywordflow}{if} (!inpfile) \textcolor{keywordflow}{return} \textcolor{keyword}{false};
+13     
+14     
+15     \hyperlink{structEntry}{Entry} e; \textcolor{comment}{// structure e declared}
+16     \textcolor{keywordflow}{while} (inpfile >> e) \{ \textcolor{comment}{//operator overloading done here}
+17         dict.push\_back(e);
+18         inpfile.ignore(80, \textcolor{charliteral}{'\(\backslash\)n'}); \textcolor{comment}{// skip the rest of the line}
+19         
+20     \}
+21     
+22     
+23     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+24 \}
+\end{DoxyCode}

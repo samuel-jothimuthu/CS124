@@ -1,0 +1,73 @@
+\hypertarget{insertinorder_8cpp}{\subsection{insertinorder.\+cpp File Reference}
+\label{insertinorder_8cpp}\index{insertinorder.\+cpp@{insertinorder.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for insertinorder.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=261pt]{insertinorder_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{insertinorder_8cpp_abf14767ea6c86eb593d6f87fe77267e7}{insertinorder} (\hyperlink{structNODE}{N\+O\+D\+E} $\ast$\&head, std\+::string city)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{insertinorder_8cpp_abf14767ea6c86eb593d6f87fe77267e7}{\index{insertinorder.\+cpp@{insertinorder.\+cpp}!insertinorder@{insertinorder}}
+\index{insertinorder@{insertinorder}!insertinorder.\+cpp@{insertinorder.\+cpp}}
+\paragraph[{insertinorder}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} insertinorder (
+\begin{DoxyParamCaption}
+\item[{{\bf N\+O\+D\+E} $\ast$\&}]{head, }
+\item[{std\+::string}]{city}
+\end{DoxyParamCaption}
+)}}\label{insertinorder_8cpp_abf14767ea6c86eb593d6f87fe77267e7}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em head,string} & This functions takes in the head and a string which is whatever city the user defines\\
+\hline
+\end{DoxyParams}
+This function inserts a city into the list in a specific order.
+
+
+\begin{DoxyImage}
+\includegraphics{insertinorder}
+\caption{Linked List}
+\end{DoxyImage}
+ This shows how the pointers previous and next work as they traverse the list looking for a place to insert. Once it does it changes the pointers to add the value into the list 
+\begin{DoxyCode}
+16 \{
+17     \hyperlink{structNODE}{NODE} *newnode;
+18      \textcolor{comment}{// Allocate a new node:}
+19      
+20     newnode = \textcolor{keyword}{new} \hyperlink{structNODE}{NODE};
+21     \textcolor{keywordflow}{if} (!newnode)
+22         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4aecedb56d1405a60c6069f4a0139bdec5}{FAILED};
+23         
+24     \textcolor{comment}{// Copy the info into newnode:}
+25     
+26     newnode->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} = city;
+27     
+28     \textcolor{comment}{// LINK newnode to the list:}
+29     \textcolor{comment}{// a) Find the right place to insert newnode (between "prev" and "node":}
+30     
+31     \hyperlink{structNODE}{NODE} *\hyperlink{structNODE}{NODE} = head, *prev = 0;
+32     \textcolor{keywordflow}{while} (NODE && NODE->\hyperlink{structNODE_a76c9a9603778b363e65bfe84da4bd72e}{city} <= city) \{
+33         \textcolor{comment}{//node->city <= city}
+34     prev = NODE;        \textcolor{comment}{//advance node and prev}
+35     NODE = NODE->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next};
+36 \}
+37     \textcolor{comment}{// b) Link newnode between prev and node}
+38     
+39     newnode->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = NODE; \textcolor{comment}{//append node to newnode}
+40     \textcolor{keywordflow}{if} (prev)
+41         prev->\hyperlink{structNODE_a078472e8ab2d2fe38e052f5c2a425618}{next} = newnode; \textcolor{comment}{//Insert after "prev"}
+42     \textcolor{keywordflow}{else} 
+43         head = newnode; \textcolor{comment}{//No prev: make new node the new head}
+44         
+45         \textcolor{keywordflow}{return} \hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4a2bc49ec37d6a5715dd23e85f1ff5bb59}{OK};
+46     \}
+\end{DoxyCode}

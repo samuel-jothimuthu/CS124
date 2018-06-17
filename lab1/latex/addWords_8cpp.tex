@@ -1,0 +1,51 @@
+\hypertarget{addWords_8cpp}{\subsection{add\+Words.\+cpp File Reference}
+\label{addWords_8cpp}\index{add\+Words.\+cpp@{add\+Words.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for add\+Words.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=264pt]{addWords_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{addWords_8cpp_ab5aa985d3bd8d2b89a2d5f35f38fb868}{addwords} (string filename, string inputstring)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{addWords_8cpp_ab5aa985d3bd8d2b89a2d5f35f38fb868}{\index{add\+Words.\+cpp@{add\+Words.\+cpp}!addwords@{addwords}}
+\index{addwords@{addwords}!add\+Words.\+cpp@{add\+Words.\+cpp}}
+\paragraph[{addwords}]{\setlength{\rightskip}{0pt plus 5cm}bool addwords (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{string}]{inputstring}
+\end{DoxyParamCaption}
+)}}\label{addWords_8cpp_ab5aa985d3bd8d2b89a2d5f35f38fb868}
+This is the function that adds unknown words the user inputs back into the dictionary 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\tt in}  & {\em filename} & the name of the file \\
+\hline
+\mbox{\tt in}  & {\em inputstring} & the new string created by the user and added to the file \\
+\hline
+\mbox{\tt out}  & {\em inputstring} & is now added into the dictionary \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+a boolean to check if the process was successful 
+\end{DoxyReturn}
+
+\begin{DoxyCode}
+11 \{
+12     \textcolor{comment}{//string test = "test"; //to test the fucntion worked}
+13     ofstream inpfile(filename, ios::app); \textcolor{comment}{//opens the file to write; to append the information to it}
+14     inpfile << inputstring << endl;
+15     inpfile.close(); \textcolor{comment}{//closes the filestream}
+16     cout << \textcolor{stringliteral}{"word added"} <<endl;
+17     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+18     
+19 \}
+\end{DoxyCode}

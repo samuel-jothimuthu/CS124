@@ -1,0 +1,45 @@
+\hypertarget{classQUICKSORT}{\subsection{Q\+U\+I\+C\+K\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$ Class Template Reference}
+\label{classQUICKSORT}\index{Q\+U\+I\+C\+K\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$@{Q\+U\+I\+C\+K\+S\+O\+R\+T$<$ A\+Q\+I\+Data $>$}}
+}
+
+
+{\ttfamily \#include $<$lab.\+h$>$}
+
+\subsubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classQUICKSORT_a887986883eb752498aac3e329d993ce5}{Sort} (\hyperlink{structAQIData}{A\+Q\+I\+Data} a\mbox{[}$\,$\mbox{]}, int n)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Member Function Documentation}
+\hypertarget{classQUICKSORT_a887986883eb752498aac3e329d993ce5}{\index{Q\+U\+I\+C\+K\+S\+O\+R\+T@{Q\+U\+I\+C\+K\+S\+O\+R\+T}!Sort@{Sort}}
+\index{Sort@{Sort}!Q\+U\+I\+C\+K\+S\+O\+R\+T@{Q\+U\+I\+C\+K\+S\+O\+R\+T}}
+\paragraph[{Sort}]{\setlength{\rightskip}{0pt plus 5cm}template$<$class A\+Q\+I\+Data $>$ void {\bf Q\+U\+I\+C\+K\+S\+O\+R\+T}$<$ {\bf A\+Q\+I\+Data} $>$\+::Sort (
+\begin{DoxyParamCaption}
+\item[{{\bf A\+Q\+I\+Data}}]{a\mbox{[}$\,$\mbox{]}, }
+\item[{int}]{n}
+\end{DoxyParamCaption}
+)}}\label{classQUICKSORT_a887986883eb752498aac3e329d993ce5}
+
+\begin{DoxyCode}
+163 \{
+164     \textcolor{keywordtype}{int} p;
+165     
+166     \textcolor{keywordflow}{if} (n <=2) \{
+167         \textcolor{keywordflow}{if} (n ==2 && a[1] < a[0])
+168             Swap(a[0], a[1]);
+169         \}
+170         \textcolor{keywordflow}{else} \{
+171             p = Split(a, n);
+172             \hyperlink{classQUICKSORT_a887986883eb752498aac3e329d993ce5}{Sort}(a, p);
+173             \hyperlink{classQUICKSORT_a887986883eb752498aac3e329d993ce5}{Sort}(&a[p+1], n-p-1);
+174         \}
+175     \}
+\end{DoxyCode}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h}{lab.\+h}\item 
+\hyperlink{SOMETYPE_8hpp}{S\+O\+M\+E\+T\+Y\+P\+E.\+hpp}\end{DoxyCompactItemize}

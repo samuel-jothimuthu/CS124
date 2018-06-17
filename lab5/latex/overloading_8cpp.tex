@@ -1,0 +1,74 @@
+\hypertarget{overloading_8cpp}{\subsection{overloading.\+cpp File Reference}
+\label{overloading_8cpp}\index{overloading.\+cpp@{overloading.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{overloading_8cpp_a85332d2da1084afe152086facbe509a6}{operator$>$=} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{overloading_8cpp_a8cd3ea0aed06a782e5dcf73049c0d4bd}{operator$<$=} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{overloading_8cpp_a8458af03a840c0d3676203c4b02d3bfb}{operator$>$} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\item 
+bool \hyperlink{overloading_8cpp_a857de641d401861627c04f6af22db8f9}{operator$<$} (const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&lhs, const \hyperlink{structAQIData}{A\+Q\+I\+Data} \&rhs)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{overloading_8cpp_a857de641d401861627c04f6af22db8f9}{\index{overloading.\+cpp@{overloading.\+cpp}!operator$<$@{operator$<$}}
+\index{operator$<$@{operator$<$}!overloading.\+cpp@{overloading.\+cpp}}
+\paragraph[{operator$<$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{overloading_8cpp_a857de641d401861627c04f6af22db8f9}
+
+\begin{DoxyCode}
+24 \{
+25     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} < rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+26 \}
+\end{DoxyCode}
+\hypertarget{overloading_8cpp_a8cd3ea0aed06a782e5dcf73049c0d4bd}{\index{overloading.\+cpp@{overloading.\+cpp}!operator$<$=@{operator$<$=}}
+\index{operator$<$=@{operator$<$=}!overloading.\+cpp@{overloading.\+cpp}}
+\paragraph[{operator$<$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$<$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{overloading_8cpp_a8cd3ea0aed06a782e5dcf73049c0d4bd}
+
+\begin{DoxyCode}
+14 \{
+15     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} <= rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+16 \}
+\end{DoxyCode}
+\hypertarget{overloading_8cpp_a8458af03a840c0d3676203c4b02d3bfb}{\index{overloading.\+cpp@{overloading.\+cpp}!operator$>$@{operator$>$}}
+\index{operator$>$@{operator$>$}!overloading.\+cpp@{overloading.\+cpp}}
+\paragraph[{operator$>$}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$ (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{overloading_8cpp_a8458af03a840c0d3676203c4b02d3bfb}
+
+\begin{DoxyCode}
+19 \{
+20     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} > rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+21 \}
+\end{DoxyCode}
+\hypertarget{overloading_8cpp_a85332d2da1084afe152086facbe509a6}{\index{overloading.\+cpp@{overloading.\+cpp}!operator$>$=@{operator$>$=}}
+\index{operator$>$=@{operator$>$=}!overloading.\+cpp@{overloading.\+cpp}}
+\paragraph[{operator$>$=}]{\setlength{\rightskip}{0pt plus 5cm}bool operator$>$= (
+\begin{DoxyParamCaption}
+\item[{const {\bf A\+Q\+I\+Data} \&}]{lhs, }
+\item[{const {\bf A\+Q\+I\+Data} \&}]{rhs}
+\end{DoxyParamCaption}
+)}}\label{overloading_8cpp_a85332d2da1084afe152086facbe509a6}
+This is the operator overloading pages I overloaded the $>$, $<$, $>$=, and $<$= operators This was done so I could compare the A\+Q\+I values specifically to one another without having to chang the authors code 
+\begin{DoxyCode}
+9 \{
+10     \textcolor{keywordflow}{return}(lhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI} >= rhs.\hyperlink{structAQIData_a4078cc02f4de75228f0880ea84bdedc6}{AQI});
+11 \}
+\end{DoxyCode}

@@ -1,0 +1,17 @@
+X:138
+T:Yankee Doodle
+S:American Veteran Fifer #138
+M:2/4
+L:1/8
+Q:1/8=180
+K:Cmaj
+%%MIDI program 72
+%%MIDI transpose 8
+%%MIDI ratio 3 1
+|: G 
+%Error : Bar 1 is 1/8 not 2/4
+| ccde | cedB | ccde | c2 BG |
+ccde | fedc | BGAB | c2 c:|
+|: z | A>B AG | AB c2 | G>A GF | EF G2 |
+A>B AG | ABc2 | GcBd | c2 c :|
+

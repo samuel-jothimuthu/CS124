@@ -1,0 +1,32 @@
+\hypertarget{destroy_8cpp}{\subsection{destroy.\+cpp File Reference}
+\label{destroy_8cpp}\index{destroy.\+cpp@{destroy.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+Include dependency graph for destroy.\+cpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=265pt]{destroy_8cpp__incl}
+\end{center}
+\end{figure}
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{lab_8h_a32c27cc471df37f4fc818d65de0a56c4}{S\+T\+A\+T\+U\+S} \hyperlink{destroy_8cpp_a74b9065a1e9ff8a9f20a1234743d443c}{Destroy} (\hyperlink{structSTACK}{S\+T\+A\+C\+K} \&stack)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{destroy_8cpp_a74b9065a1e9ff8a9f20a1234743d443c}{\index{destroy.\+cpp@{destroy.\+cpp}!Destroy@{Destroy}}
+\index{Destroy@{Destroy}!destroy.\+cpp@{destroy.\+cpp}}
+\paragraph[{Destroy}]{\setlength{\rightskip}{0pt plus 5cm}{\bf S\+T\+A\+T\+U\+S} Destroy (
+\begin{DoxyParamCaption}
+\item[{{\bf S\+T\+A\+C\+K} \&}]{stack}
+\end{DoxyParamCaption}
+)}}\label{destroy_8cpp_a74b9065a1e9ff8a9f20a1234743d443c}
+This is the function that destroys the stack. it taks in stack as the parameter 
+\begin{DoxyCode}
+7 \{
+8     \textcolor{keyword}{delete} [] stack.\hyperlink{structSTACK_a6d512f82cbd75729347a293193039538}{buf};
+9 \}
+\end{DoxyCode}

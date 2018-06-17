@@ -1,0 +1,30 @@
+\hypertarget{addtimes_8cpp}{\subsection{addtimes.\+cpp File Reference}
+\label{addtimes_8cpp}\index{addtimes.\+cpp@{addtimes.\+cpp}}
+}
+{\ttfamily \#include \char`\"{}lab.\+h\char`\"{}}\\*
+\subsubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+bool \hyperlink{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{addtimes} (string filename, string inputstring)
+\end{DoxyCompactItemize}
+
+
+\subsubsection{Function Documentation}
+\hypertarget{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}{\index{addtimes.\+cpp@{addtimes.\+cpp}!addtimes@{addtimes}}
+\index{addtimes@{addtimes}!addtimes.\+cpp@{addtimes.\+cpp}}
+\paragraph[{addtimes}]{\setlength{\rightskip}{0pt plus 5cm}bool addtimes (
+\begin{DoxyParamCaption}
+\item[{string}]{filename, }
+\item[{string}]{inputstring}
+\end{DoxyParamCaption}
+)}}\label{addtimes_8cpp_a7a7719446a70a6db5d33348671d0e8c5}
+
+\begin{DoxyCode}
+3 \{
+4     
+5     ofstream inpfile(filename, ios::app); 
+6     inpfile << inputstring << endl;
+7     inpfile.close();
+8     \textcolor{keywordflow}{return} \textcolor{keyword}{true};
+9 \}
+\end{DoxyCode}

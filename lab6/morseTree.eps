@@ -1,0 +1,589 @@
+%!PS-Adobe-2.0 EPSF-2.0
+%%Creator: Box::print() by Christian Lindig
+%%BoundingBox: 42 35 241 153
+%%Pages: 1
+%%EndComments
+
+gsave
+38 157 translate
+0.261498 -0.261498 scale
+% $Id$
+% Header for DDD PostScript Box output
+
+% Copyright (C) 1995-1998 Technische Universitaet Braunschweig, Germany.
+% Written by Christian Lindig <lindig@ips.cs.tu-bs.de>.
+% 
+% This file is part of DDD.
+% 
+% DDD is free software; you can redistribute it and/or
+% modify it under the terms of the GNU General Public
+% License as published by the Free Software Foundation; either
+% version 3 of the License, or (at your option) any later version.
+% 
+% DDD is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+% See the GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public
+% License along with DDD -- see the file COPYING.
+% If not, see <http://www.gnu.org/licenses/>.
+% 
+% DDD is the data display debugger.
+% For details, see the DDD World-Wide-Web page, 
+% `http://www.gnu.org/software/ddd/',
+% or send a mail to the DDD developers <ddd@gnu.org>.
+
+% Make all definitions local to the ddddict dictionary
+/ddddict 25 dict def 
+
+ddddict begin		% make dict active 
+
+
+% Global variables
+/fontSize+ 12 def
+/font+ /Courier def  
+
+
+% Some small utilities
+/cm { 28.34646 mul } bind def
+
+
+% ISOLATIN1* - reencode a font to ISO Latin 1 encoding
+%
+% newfont table oldfont isolatin1*
+
+/isolatin1* {
+	findfont
+	dup maxlength dict begin
+	{
+		1 index /FID ne { def } { pop pop } ifelse
+	} forall
+	/Encoding exch def
+	dup /FontName exch def
+	currentdict end definefont pop
+} bind def
+
+
+% Define the ISO Latin 1 encoding of a font
+ 
+/isotable[
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/space/exclam/quotedbl/numbersign
+/dollar/percent/ampersand/quoteright/parenleft/parenright/asterisk/plus/comma
+/hyphen/period/slash/zero/one/two/three/four/five/six/seven/eight/nine/colon
+/semicolon/less/equal/greater/question/at/A/B/C/D/E/F/G/H/I/J/K/L/M/N/O/P/Q/R/S
+/T/U/V/W/X/Y/Z/bracketleft/backslash/bracketright/asciicircum/underscore
+/quoteleft/a/b/c/d/e/f/g/h/i/j/k/l/m/n/o/p/q/r/s/t/u/v/w/x/y/z/braceleft/bar
+/braceright/asciitilde/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef/.notdef
+/.notdef/dotlessi/grave/acute/circumflex/tilde/macron/breve/dotaccent/dieresis
+/.notdef/ring/cedilla/.notdef/hungarumlaut/ogonek/caron/.notdef/exclamdown/cent
+/sterling/currency/yen/brokenbar/section/dieresis/copyright/ordfeminine
+/guilsinglleft/logicalnot/hyphen/registered/macron/degree/plusminus/twosuperior
+/threesuperior/acute/mu/paragraph/periodcentered/cedilla/onesuperior
+/ordmasculine/guilsinglright/onequarter/onehalf/threequarters/questiondown
+/Agrave/Aacute/Acircumflex/Atilde/Adieresis/Aring/AE/Ccedilla/Egrave/Eacute
+/Ecircumflex/Edieresis/Igrave/Iacute/Icircumflex/Idieresis/Eth/Ntilde/Ograve
+/Oacute/Ocircumflex/Otilde/Odieresis/multiply/Oslash/Ugrave/Uacute/Ucircumflex
+/Udieresis/Yacute/Thorn/germandbls/agrave/aacute/acircumflex/atilde/adieresis
+/aring/ae/ccedilla/egrave/eacute/ecircumflex/edieresis/igrave/iacute
+/icircumflex/idieresis/eth/ntilde/ograve/oacute/ocircumflex/otilde/odieresis
+/divide/oslash/ugrave/uacute/ucircumflex/udieresis/yacute/thorn/ydieresis
+] def
+
+
+% YCORRECT*
+% The reference point of a string ist NOT its lower left corner but 
+% its baseline.  Therefore, the y coordinate must be corrected.  
+% Returns the correction for the current font.
+%
+% ycorrect* y
+
+/ycorrect* {
+	currentfont /FontBBox get
+	aload pop pop pop
+	currentfont /FontMatrix get dtransform
+	exch pop
+} def 
+
+
+% TEXT*
+% print out a string and make sure not to require more space than
+% specified.
+% font xsize ysize xorigin yorigin (string) text*
+
+/text* {
+
+	/string+ exch def		% set up some variables ..
+	moveto				% move to (xorigin,yorigin)
+	/ysize+ exch def
+	/xsize+ exch def
+	/thefont+ exch def
+
+	% is the right font already selected ?
+
+	thefont+ font+ ne 
+	ysize+ fontSize+ ne
+	or {	
+		% set up the right font - reencode it	
+		
+		/Symbol thefont+ eq 
+		{
+			thefont+ findfont
+		}{
+
+			/isofont+ isotable thefont+ isolatin1*	
+			/isofont+ findfont
+		}ifelse
+
+		[ysize+ 0 0 ysize+ neg 0 0] makefont
+		setfont
+		
+		/font+ thefont+ def
+		/fontSize+ ysize+ def
+	} if
+
+	% correct current point 
+
+	0 ycorrect* neg rmoveto
+
+	% string too long?  Scale it down ...
+	% The actual font is scaled. There is a good chance,
+	% that this will not happen too often when the font is not
+	% changed during the calls of text*
+
+	xsize+ string+ stringwidth pop div dup dup
+	1 lt {
+		0 0 1 0 0 6 array astore currentfont exch 
+		makefont setfont
+		pop
+	}{ 
+		% string is too short ... scale it up
+
+		1.05 gt {
+			0 0 1 0 0 6 array astore currentfont exch 
+			makefont setfont	
+		}{
+			pop
+
+		} ifelse
+	} ifelse
+	
+	string+ show
+
+} bind def
+
+	
+% ARROWLINE*
+% Draw a line of given width with an arrow at its end
+% len gives the height of the triangle forming the head of the arrow
+% and angle the angle at its top
+%	
+% angle len  x1 y1 x2 y2 linewidth arrowline*
+
+/arrowline* {
+	setlinewidth			% angle len x1 y1 x2 y2
+	/y2 exch def
+	/x2 exch def
+	/y1 exch def
+	/x1 exch def
+	/len+ exch def			% height of triangle
+
+	/alpha+ 
+		y2 y1 sub		% define alpha+
+		x2 x1 sub
+		atan
+	def
+
+	/base+				% define half of baseline
+		exch 
+		2 div dup		% angle angle
+		sin exch cos 	 	% sin(angle) cos(angle)
+		div			% tan(angle)
+		len+
+		mul			% half of baseline
+	def  
+	
+	newpath				% draw the line
+	x1 y1 moveto 
+	x2 len+ alpha+ cos mul sub 	% shorten the line to the end  
+	y2 len+ alpha+ sin mul sub 	% of the triangle
+	lineto
+	stroke		
+
+	gsave				% set the origin to the head of
+	0 setlinewidth			% the arrow and rotate the system
+	x2 y2 
+	translate			% origin now at x2 y2
+
+	alpha+ 90 sub rotate 		% rotate the system
+
+	newpath				% draw a triangle
+	0 0 moveto
+	base+ len+ neg rlineto
+	base+ 2 mul neg 0 rlineto
+	closepath
+	fill
+	
+	grestore
+} bind def
+
+% ARROWHEAD*
+% draw an arrow head inclined by alpha at (x,y)
+%
+% angle len alpha x y
+
+/arrowhead* {
+	/y exch def
+	/x exch def
+	/alpha+ exch def
+	/len+ exch def			% height of triangle
+
+	/base+				% define half of baseline
+		exch 
+		2 div dup		% angle angle
+		sin exch cos 	 	% sin(angle) cos(angle)
+		div			% tan(angle)
+		len+
+		mul			% half of baseline
+	def
+
+	gsave				% set the origin to the head of
+	0 setlinewidth			% the arrow and rotate the system
+	x y 
+	translate			% origin now at x y
+
+	alpha+ 90 sub rotate 		% rotate the system
+
+	newpath				% draw a triangle
+	0 0 moveto
+	base+ len+ neg rlineto
+	base+ 2 mul neg 0 rlineto
+	closepath
+	fill
+	
+	grestore
+} bind def
+
+
+% LINE*
+% draw a line of given width from (x1,y1) to (x2,y2)
+%
+% x1 y1 x2 y2 width line*
+
+/line* {
+	setlinewidth	% x1 y1 x2 y2
+	newpath
+	4 2 roll 	% x2 y2 x1 y1
+	moveto		% x2 y2
+	lineto		
+	stroke
+} bind def
+
+
+% CLEAN*
+%
+% fill a box given by four points with white colour ..
+% x1 y1 x2 y2 x3 y3 x4 y4 clean*
+
+/clean* {
+	gsave
+	1 setgray
+	0 setlinewidth
+	newpath
+	moveto  lineto  lineto lineto
+	closepath
+	fill
+	grestore
+} bind def
+
+
+% BOX*
+% fill a box given by four points
+%
+% x1 y1 x2 y2 x3 y3 x4 y4 box*
+
+/box* {
+	0 setlinewidth
+	newpath
+	moveto 	lineto 	lineto lineto
+	closepath
+	fill
+} bind def
+
+
+% ARC*
+% draw an ellipse with center (cx,cy), radius dx dy, starting at start
+% and ending at end.
+%
+% start end dx dy cx cy width arc*
+
+/arc* {
+	gsave
+	setlinewidth
+	translate
+	newpath
+	dup 3 1 roll		% start end dy dx dy
+	div 1 scale		% dy dx/dy 1 scale => start end dy
+	
+	0 exch  0 exch		% start end 0 0 dy 
+	5 -2 roll 		% 0 0 dy start end
+
+	dup
+	0 eq {			% replace 0 by 360
+		pop 
+		360
+	} if
+	arc
+	stroke
+	grestore
+} bind def
+
+
+% BEGINCOLOR* / ENDCOLOR*
+% Draw something using a specific foreground color
+%
+% red green blue begincolor* SOMETHING endcolor*
+
+/begincolor* {
+        currentrgbcolor         % red green blue red' green' blue'
+        6 3 roll                % red' green' blue' red green blue
+	setrgbcolor             % red' green' blue'
+} bind def
+
+/endcolor* {
+	setrgbcolor
+} bind def
+
+
+% Set up the right font to the right size
+
+/isofont+ isotable font+ isolatin1* 	% reencode font+
+					% and make it the current font
+/isofont+ findfont
+[fontSize+ 0 0 fontSize+ neg 0 0] makefont
+setfont
+
+
+%%EndProlog
+30 10 210 48 266 48 1 arrowline*
+/Helvetica-Narrow 12 13 232 46 (*\(\)) text*
+30 10 313 81 263 111 1 arrowline*
+/Helvetica-Narrow 38 13 269 94 (*\(\(\).left\)) text*
+30 10 230 177 250 207 1 arrowline*
+/Helvetica-Narrow 45 13 218 190 (*\(\(\).right\)) text*
+30 10 428 81 484 111 1 arrowline*
+/Helvetica-Narrow 45 13 434 94 (*\(\(\).right\)) text*
+30 10 522 177 502 207 1 arrowline*
+/Helvetica-Narrow 38 13 493 190 (*\(\(\).left\)) text*
+30 10 464 273 448 303 1 arrowline*
+/Helvetica-Narrow 38 13 437 286 (*\(\(\).left\)) text*
+30 10 416 369 400 399 1 arrowline*
+/Helvetica-Narrow 38 13 389 382 (*\(\(\).left\)) text*
+30 10 546 273 606 303 1 arrowline*
+/Helvetica-Narrow 45 13 554 286 (*\(\(\).right\)) text*
+30 10 656 369 640 399 1 arrowline*
+/Helvetica-Narrow 38 13 629 382 (*\(\(\).left\)) text*
+14 25 211 25 211 71 14 71 clean*
+14 25 210 25 210 26 14 26 box* %(14, 25)(196, 1)
+14 26 15 26 15 69 14 69 box* %(14, 26)(1, 43)
+/Courier 10 18 17 46 (1) text*
+/Courier 20 18 27 46 (: ) text*
+/Courier-BoldOblique 150 18 47 46 (Telegraph::root) text*
+17 46 207 46 207 47 17 47 box* %(17, 46)(190, 1)
+/Courier 190 18 17 67 (\(TNODE *\) 0x804a008) text*
+209 26 210 26 210 69 209 69 box* %(209, 26)(1, 43)
+14 69 210 69 210 70 14 70 box* %(14, 69)(196, 1)
+210 26 211 26 211 70 210 70 box* %(210, 26)(1, 44)
+15 70 211 70 211 71 15 71 box* %(15, 70)(196, 1)
+106 111 311 111 311 178 106 178 clean*
+106 111 310 111 310 112 106 112 box* %(106, 111)(204, 1)
+106 112 107 112 107 176 106 176 box* %(106, 112)(1, 64)
+109 114 307 114 307 115 109 115 box* %(109, 114)(198, 1)
+109 115 110 115 110 173 109 173 box* %(109, 115)(1, 58)
+/Courier 60 18 124 135 (symbol) text*
+/Courier 30 18 184 135 ( = ) text*
+/Courier 60 18 214 135 (42 \'*\') text*
+/Courier 40 18 124 153 (left) text*
+/Courier 30 18 184 153 ( = ) text*
+/Courier 30 18 214 153 (0x0) text*
+/Courier 50 18 124 171 (right) text*
+/Courier 30 18 184 171 ( = ) text*
+/Courier 90 18 214 171 (0x804a028) text*
+306 115 307 115 307 173 306 173 box* %(306, 115)(1, 58)
+109 173 307 173 307 174 109 174 box* %(109, 173)(198, 1)
+309 112 310 112 310 176 309 176 box* %(309, 112)(1, 64)
+106 176 310 176 310 177 106 177 box* %(106, 176)(204, 1)
+310 112 311 112 311 177 310 177 box* %(310, 112)(1, 65)
+107 177 311 177 311 178 107 178 box* %(107, 177)(204, 1)
+266 15 471 15 471 82 266 82 clean*
+266 15 470 15 470 16 266 16 box* %(266, 15)(204, 1)
+266 16 267 16 267 80 266 80 box* %(266, 16)(1, 64)
+269 18 467 18 467 19 269 19 box* %(269, 18)(198, 1)
+269 19 270 19 270 77 269 77 box* %(269, 19)(1, 58)
+/Courier 60 18 284 39 (symbol) text*
+/Courier 30 18 344 39 ( = ) text*
+/Courier 60 18 374 39 (42 \'*\') text*
+/Courier 40 18 284 57 (left) text*
+/Courier 30 18 344 57 ( = ) text*
+/Courier 90 18 374 57 (0x804a018) text*
+/Courier 50 18 284 75 (right) text*
+/Courier 30 18 344 75 ( = ) text*
+/Courier 90 18 374 75 (0x804a038) text*
+466 19 467 19 467 77 466 77 box* %(466, 19)(1, 58)
+269 77 467 77 467 78 269 78 box* %(269, 77)(198, 1)
+469 16 470 16 470 80 469 80 box* %(469, 16)(1, 64)
+266 80 470 80 470 81 266 81 box* %(266, 80)(204, 1)
+470 16 471 16 471 81 470 81 box* %(470, 16)(1, 65)
+267 81 471 81 471 82 267 82 box* %(267, 81)(204, 1)
+442 111 647 111 647 178 442 178 clean*
+442 111 646 111 646 112 442 112 box* %(442, 111)(204, 1)
+442 112 443 112 443 176 442 176 box* %(442, 112)(1, 64)
+445 114 643 114 643 115 445 115 box* %(445, 114)(198, 1)
+445 115 446 115 446 173 445 173 box* %(445, 115)(1, 58)
+/Courier 60 18 460 135 (symbol) text*
+/Courier 30 18 520 135 ( = ) text*
+/Courier 60 18 550 135 (42 \'*\') text*
+/Courier 40 18 460 153 (left) text*
+/Courier 30 18 520 153 ( = ) text*
+/Courier 90 18 550 153 (0x804a048) text*
+/Courier 50 18 460 171 (right) text*
+/Courier 30 18 520 171 ( = ) text*
+/Courier 30 18 550 171 (0x0) text*
+642 115 643 115 643 173 642 173 box* %(642, 115)(1, 58)
+445 173 643 173 643 174 445 174 box* %(445, 173)(198, 1)
+645 112 646 112 646 176 645 176 box* %(645, 112)(1, 64)
+442 176 646 176 646 177 442 177 box* %(442, 176)(204, 1)
+646 112 647 112 647 177 646 177 box* %(646, 112)(1, 65)
+443 177 647 177 647 178 443 178 box* %(443, 177)(204, 1)
+185 207 360 207 360 274 185 274 clean*
+185 207 359 207 359 208 185 208 box* %(185, 207)(174, 1)
+185 208 186 208 186 272 185 272 box* %(185, 208)(1, 64)
+188 210 356 210 356 211 188 211 box* %(188, 210)(168, 1)
+188 211 189 211 189 269 188 269 box* %(188, 211)(1, 58)
+/Courier 60 18 203 231 (symbol) text*
+/Courier 30 18 263 231 ( = ) text*
+/Courier 60 18 293 231 (65 \'A\') text*
+/Courier 40 18 203 249 (left) text*
+/Courier 30 18 263 249 ( = ) text*
+/Courier 30 18 293 249 (0x0) text*
+/Courier 50 18 203 267 (right) text*
+/Courier 30 18 263 267 ( = ) text*
+/Courier 30 18 293 267 (0x0) text*
+355 211 356 211 356 269 355 269 box* %(355, 211)(1, 58)
+188 269 356 269 356 270 188 270 box* %(188, 269)(168, 1)
+358 208 359 208 359 272 358 272 box* %(358, 208)(1, 64)
+185 272 359 272 359 273 185 273 box* %(185, 272)(174, 1)
+359 208 360 208 360 273 359 273 box* %(359, 208)(1, 65)
+186 273 360 273 360 274 186 274 box* %(186, 273)(174, 1)
+330 303 535 303 535 370 330 370 clean*
+330 303 534 303 534 304 330 304 box* %(330, 303)(204, 1)
+330 304 331 304 331 368 330 368 box* %(330, 304)(1, 64)
+333 306 531 306 531 307 333 307 box* %(333, 306)(198, 1)
+333 307 334 307 334 365 333 365 box* %(333, 307)(1, 58)
+/Courier 60 18 348 327 (symbol) text*
+/Courier 30 18 408 327 ( = ) text*
+/Courier 60 18 438 327 (42 \'*\') text*
+/Courier 40 18 348 345 (left) text*
+/Courier 30 18 408 345 ( = ) text*
+/Courier 90 18 438 345 (0x804a068) text*
+/Courier 50 18 348 363 (right) text*
+/Courier 30 18 408 363 ( = ) text*
+/Courier 30 18 438 363 (0x0) text*
+530 307 531 307 531 365 530 365 box* %(530, 307)(1, 58)
+333 365 531 365 531 366 333 366 box* %(333, 365)(198, 1)
+533 304 534 304 534 368 533 368 box* %(533, 304)(1, 64)
+330 368 534 368 534 369 330 369 box* %(330, 368)(204, 1)
+534 304 535 304 535 369 534 369 box* %(534, 304)(1, 65)
+331 369 535 369 535 370 331 370 box* %(331, 369)(204, 1)
+297 399 472 399 472 466 297 466 clean*
+297 399 471 399 471 400 297 400 box* %(297, 399)(174, 1)
+297 400 298 400 298 464 297 464 box* %(297, 400)(1, 64)
+300 402 468 402 468 403 300 403 box* %(300, 402)(168, 1)
+300 403 301 403 301 461 300 461 box* %(300, 403)(1, 58)
+/Courier 60 18 315 423 (symbol) text*
+/Courier 30 18 375 423 ( = ) text*
+/Courier 60 18 405 423 (66 \'B\') text*
+/Courier 40 18 315 441 (left) text*
+/Courier 30 18 375 441 ( = ) text*
+/Courier 30 18 405 441 (0x0) text*
+/Courier 50 18 315 459 (right) text*
+/Courier 30 18 375 459 ( = ) text*
+/Courier 30 18 405 459 (0x0) text*
+467 403 468 403 468 461 467 461 box* %(467, 403)(1, 58)
+300 461 468 461 468 462 300 462 box* %(300, 461)(168, 1)
+470 400 471 400 471 464 470 464 box* %(470, 400)(1, 64)
+297 464 471 464 471 465 297 465 box* %(297, 464)(174, 1)
+471 400 472 400 472 465 471 465 box* %(471, 400)(1, 65)
+298 465 472 465 472 466 298 466 box* %(298, 465)(174, 1)
+378 207 583 207 583 274 378 274 clean*
+378 207 582 207 582 208 378 208 box* %(378, 207)(204, 1)
+378 208 379 208 379 272 378 272 box* %(378, 208)(1, 64)
+381 210 579 210 579 211 381 211 box* %(381, 210)(198, 1)
+381 211 382 211 382 269 381 269 box* %(381, 211)(1, 58)
+/Courier 60 18 396 231 (symbol) text*
+/Courier 30 18 456 231 ( = ) text*
+/Courier 60 18 486 231 (42 \'*\') text*
+/Courier 40 18 396 249 (left) text*
+/Courier 30 18 456 249 ( = ) text*
+/Courier 90 18 486 249 (0x804a058) text*
+/Courier 50 18 396 267 (right) text*
+/Courier 30 18 456 267 ( = ) text*
+/Courier 90 18 486 267 (0x804a078) text*
+578 211 579 211 579 269 578 269 box* %(578, 211)(1, 58)
+381 269 579 269 579 270 381 270 box* %(381, 269)(198, 1)
+581 208 582 208 582 272 581 272 box* %(581, 208)(1, 64)
+378 272 582 272 582 273 378 273 box* %(378, 272)(204, 1)
+582 208 583 208 583 273 582 273 box* %(582, 208)(1, 65)
+379 273 583 273 583 274 379 274 box* %(379, 273)(204, 1)
+570 303 775 303 775 370 570 370 clean*
+570 303 774 303 774 304 570 304 box* %(570, 303)(204, 1)
+570 304 571 304 571 368 570 368 box* %(570, 304)(1, 64)
+573 306 771 306 771 307 573 307 box* %(573, 306)(198, 1)
+573 307 574 307 574 365 573 365 box* %(573, 307)(1, 58)
+/Courier 60 18 588 327 (symbol) text*
+/Courier 30 18 648 327 ( = ) text*
+/Courier 60 18 678 327 (42 \'*\') text*
+/Courier 40 18 588 345 (left) text*
+/Courier 30 18 648 345 ( = ) text*
+/Courier 90 18 678 345 (0x804a088) text*
+/Courier 50 18 588 363 (right) text*
+/Courier 30 18 648 363 ( = ) text*
+/Courier 30 18 678 363 (0x0) text*
+770 307 771 307 771 365 770 365 box* %(770, 307)(1, 58)
+573 365 771 365 771 366 573 366 box* %(573, 365)(198, 1)
+773 304 774 304 774 368 773 368 box* %(773, 304)(1, 64)
+570 368 774 368 774 369 570 369 box* %(570, 368)(204, 1)
+774 304 775 304 775 369 774 369 box* %(774, 304)(1, 65)
+571 369 775 369 775 370 571 370 box* %(571, 369)(204, 1)
+537 399 712 399 712 466 537 466 clean*
+537 399 711 399 711 400 537 400 box* %(537, 399)(174, 1)
+537 400 538 400 538 464 537 464 box* %(537, 400)(1, 64)
+540 402 708 402 708 403 540 403 box* %(540, 402)(168, 1)
+540 403 541 403 541 461 540 461 box* %(540, 403)(1, 58)
+/Courier 60 18 555 423 (symbol) text*
+/Courier 30 18 615 423 ( = ) text*
+/Courier 60 18 645 423 (67 \'C\') text*
+/Courier 40 18 555 441 (left) text*
+/Courier 30 18 615 441 ( = ) text*
+/Courier 30 18 645 441 (0x0) text*
+/Courier 50 18 555 459 (right) text*
+/Courier 30 18 615 459 ( = ) text*
+/Courier 30 18 645 459 (0x0) text*
+707 403 708 403 708 461 707 461 box* %(707, 403)(1, 58)
+540 461 708 461 708 462 540 462 box* %(540, 461)(168, 1)
+710 400 711 400 711 464 710 464 box* %(710, 400)(1, 64)
+537 464 711 464 711 465 537 465 box* %(537, 464)(174, 1)
+711 400 712 400 712 465 711 465 box* %(711, 400)(1, 65)
+538 465 712 465 712 466 538 466 box* %(538, 465)(174, 1)
+%%Trailer
+
+% $Id$
+% Trailer for DDD PostScript Box output
+
+grestore
+showpage
+end		% of ddddict 

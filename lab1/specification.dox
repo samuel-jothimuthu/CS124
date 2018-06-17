@@ -1,0 +1,46 @@
+/** \page Specification
+
+This is the English-Italian Dictionary program.
+The user can input an English word and the program will provide translation of the word.
+The current file the program uses to translate is and English to Italian Dictionary 
+If the word that user enters is not in the program the the user can add the word 
+into the dictionary by following the instructions given by the program.
+
+ Freatures:
+
+1) The instructures are clear and concise to understand.
+
+2) The ability to add words into the dictionary/program for later use.
+
+3) Operator overlaoding to improve effiecncy of program. 
+
+*/
+/** \page Analysis
+When the program begins to run the first thing it will do is tell the user what the Dictionary is
+and then ask the user to input a word he/she wants translated. If the user enters a word in the dictionary 
+the program will give the traslation and then ask if the user has another word that needs to be 
+translated. If the user enters a word that is not in the dictionary the program will ask the user if 
+he/she want to add it in. Typing "y" (the program asks this) will then prompt the program to ask the user the
+translated word so that it will then be added into the dictionary and be used again when needed.
+Typing "q" will quit the program.
+*/
+/** \page Design
+There are 7 parts of this lab which can be seen examined more closely later in the document.
+Each part has 1 specific function or purpose so as not to create confusion as to what file does what or where something is located.
+There will be a function to add the words back into the dictionary called addwords and there will be a selection control 
+structure added into the main fucntion to allow the user to choose and add a new word into the dictionary.
+The pages that contain these functions provide more detail as to the algorithms and logic of how this is done. 
+
+The fundamental and most important design of this project is that it can and will work with another dictionary. 
+The name of the dictionary has to be added into the program but other than that the code will work well with another file.
+This greatly improves portabilty and the simplicity of the code.
+*/
+/** \page Test 
+This test shows that the program functions 
+
+\latexonly
+\includegraphics{../fig1.png}
+\endlatexonly
+*/
+
+
